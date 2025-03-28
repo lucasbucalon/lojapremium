@@ -4,7 +4,7 @@
     "title": "Categoria",
     "description": "Camisas",
     "image": "/imgBanners/img1.png",
-    "link": "Produtos/Camisas"
+    "link": "/Categorias/Camisas"
   },
   {
     "id": 2,

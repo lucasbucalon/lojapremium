@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Notebook",
+    "image": "/imgCategorias/c1.jpg",
+    "link": "/Categorias/Camisas"
+  },
+  {
+    "id": 2,
+    "title": "Notebook",
+    "image": "/imgCategorias/c2.jpg",
+    "link": "/Categorias/Roupas"
+  },
+  {
+    "id": 3,
+    "title": "Notebook",
+    "image": "/imgCategorias/c3.jpg",
+    "link": "/Categorias/Camisas"
+  },
+  {
+    "id": 4,
+    "title": "Notebook",
+    "image": "/imgCategorias/c4.jpg",
+    "link": "/Categorias/Roupas"
+  },
+  {
+    "id": 5,
+    "title": "Notebook",
+    "image": "/imgCategorias/c5.jpg",
+    "link": "/Categorias/Camisas"
+  },
+  {
+    "id": 6,
+    "title": "Notebook",
+    "image": "/imgCategorias/c6.jpg",
+    "link": "/Categorias/Roupas"
+  },
+  {
+    "id": 7,
+    "title": "Notebook",
+    "image": "/imgCategorias/c7.jpg",
+    "link": "/Categorias/Camisas"
+  },
+  {
+    "id": 8,
+    "title": "Notebook",
+    "image": "/imgCategorias/c8.jpg",
+    "link": "/Categorias/Roupas"
+  },
+  {
+    "id": 9,
+    "title": "Notebook",
+    "image": "/imgCategorias/c9.jpg",
+    "link": "/Categorias/Camisas"
+  }
+]
