@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Categoria",
     "description": "Camisas",
-    "image": "public/imgs/img1.png",
+    "image": "/imgs/img1.png",
     "link": "Produtos/Camisas"
   },
   {
