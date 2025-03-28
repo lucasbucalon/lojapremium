@@ -6,7 +6,7 @@ export default function Footer() {
       <div>
         <div className={styles.footer_container}>
           <div className={styles.footer_section}>
-            <img src="./public/image/logo.jpg" alt="Logo" />
+            <img src="/image/logo.jpg" alt="Logo" />
           </div>
 
           {/* Links Importantes */}
