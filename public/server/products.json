@@ -8,12 +8,12 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -35,9 +35,9 @@
     ],
     "price": 35.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -59,9 +59,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -84,9 +84,9 @@
     ],
     "price": 99.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -107,9 +107,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -131,9 +131,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -156,9 +156,9 @@
     ],
     "price": 27.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -179,9 +179,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -203,9 +203,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -228,9 +228,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -251,9 +251,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -275,9 +275,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -300,9 +300,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -323,9 +323,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -347,9 +347,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -372,9 +372,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -395,9 +395,9 @@
     ],
     "price": 35.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -419,9 +419,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -444,9 +444,9 @@
     ],
     "price": 99.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -467,9 +467,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -491,9 +491,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -516,9 +516,9 @@
     ],
     "price": 27.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -539,9 +539,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -563,9 +563,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -588,9 +588,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -611,9 +611,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -635,9 +635,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -660,9 +660,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -683,9 +683,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/12.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "feminino"
@@ -707,9 +707,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -733,9 +733,9 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png",
-      "/public/imgProdutos/11.png"
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png",
+      "/imgProdutos/11.png"
     ],
     "type": [
       "masculino",
@@ -758,12 +758,12 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino"
@@ -785,11 +785,11 @@
     ],
     "price": 30.99,
     "image": [
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/11.png",
-      "/public/imgProdutos/10.jpg",
-      "/public/imgProdutos/12.png"
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/11.png",
+      "/imgProdutos/10.jpg",
+      "/imgProdutos/12.png"
     ],
     "type": [
       "masculino",
@@ -811,9 +811,9 @@
     ],
     "price": 199.99,
     "image": [
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/9.jpg"
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/9.jpg"
     ],
     "type": [
       "masculino",
@@ -836,9 +836,9 @@
     ],
     "price": 149.99,
     "image": [
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/8.jpg"
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/8.jpg"
     ],
     "type": [
       "unisex"
@@ -860,9 +860,9 @@
     ],
     "price": 89.90,
     "image": [
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/7.jpg"
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/7.jpg"
     ],
     "type": [
       "unisex"
@@ -883,9 +883,9 @@
     ],
     "price": 59.90,
     "image": [
-      "/public/imgProdutos/7.jpg",
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/8.jpg"
+      "/imgProdutos/7.jpg",
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/8.jpg"
     ],
     "type": [
       "masculino",
@@ -907,9 +907,9 @@
     ],
     "price": 129.90,
     "image": [
-      "/public/imgProdutos/9.jpg",
-      "/public/imgProdutos/8.jpg",
-      "/public/imgProdutos/7.jpg"
+      "/imgProdutos/9.jpg",
+      "/imgProdutos/8.jpg",
+      "/imgProdutos/7.jpg"
     ],
     "type": [
       "masculino"
