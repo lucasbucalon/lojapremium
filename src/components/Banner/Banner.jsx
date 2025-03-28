@@ -14,7 +14,7 @@ export default function Banner() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch("./server/banners.json");
+        const response = await fetch("/banners.json");
         const data = await response.json();
         setBanners([...data.slice(-2), ...data, ...data.slice(0, 2)]); // Clona os slides para efeito de looping
       } catch (error) {
