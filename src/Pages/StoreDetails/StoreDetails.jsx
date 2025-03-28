@@ -240,7 +240,7 @@ export default function StoreDetails() {
         <div className={style.content_header}>
           {/* LOGO DA LOJA */}
           <div className={style.logo}>
-            <img src="/public/image/logo.jpg" alt="logo" />
+            <img src="/image/logo.jpg" alt="logo" />
           </div>
 
           {/* BARRA DE PESQUISA */}
