@@ -1,0 +1,122 @@
+.footer_wrapper {
+  padding: 40px 20px;
+  margin: 100px 0 -60px 0;
+  background-color: #eca0a0;
+  display: flex;
+  justify-content: space-around;
+
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_section {
+    width: 20%;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: black;
+  }
+
+  img {
+    background-image: cover;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: black;
+    cursor: pointer;
+  }
+
+  a {
+    margin: 8px 0;
+    color: black;
+    display: flex;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 10px 0;
+  }
+
+  ul li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .social_icons {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+    }
+
+    svg {
+      margin: 0 3px;
+      color: black;
+      width: 30px;
+      height: 30px;
+      transition: 0.3s;
+    }
+
+    svg:hover {
+      transform: scale(1.3);
+      color: blue;
+    }
+  }
+
+  .footer_bottom {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.4rem;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .footer_bottom:hover {
+    background-color: rgb(12, 12, 12);
+    transform: scale(1.01);
+    text-decoration: underline;
+  }
+
+  .ck {
+    color: #05ee15;
+    margin: 0 0 0 5px;
+  }
+
+  .web {
+    margin: 0 5px 0 0;
+    color: white;
+  }
+
+  .ck,
+  .web {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+}

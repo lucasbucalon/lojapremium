@@ -1,0 +1,29 @@
+.error_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #d79494;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+
+  & h2 {
+    font-weight: 600;
+  }
+
+  & p {
+    font-size: 1.8rem;
+    margin-top: 30px;
+  }
+}

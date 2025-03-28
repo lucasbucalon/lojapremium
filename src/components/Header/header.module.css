@@ -1,0 +1,222 @@
+.header {
+  width: 100%;
+
+  & button {
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+/* BARRA LATERAL DE COMPRA  */
+
+.cart {
+  z-index: 99;
+  border-left: 1px solid black;
+  position: fixed;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: #eca0a0;
+  transition: 0.7s;
+
+  & .config {
+    border: 1px solid black;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 15px auto;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: #eca0a0;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.5rem;
+    transition: 0.5s;
+  }
+
+  & .config:hover {
+    background-color: #d79494;
+    transform: scale(1.03);
+  }
+
+  & .icon_config {
+    color: #000;
+    font-size: 2.5rem;
+    margin: 0 10px 0 0;
+  }
+
+  & h2 {
+    text-align: center;
+    color: #000;
+    margin: 25px 10px;
+    border-bottom: 1px solid black;
+  }
+
+  & .btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+
+    & button {
+      width: 100%;
+      padding: 15px 0;
+      border: 1px solid black;
+      cursor: pointer;
+      background-color: chartreuse;
+      color: #000;
+    }
+
+    & .close {
+      background-color: gray !important;
+      color: white !important;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+}
+
+.header_content {
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* LOGO DA LOJA */
+
+.logo {
+  width: 15%;
+  & img {
+    width: 100%;
+    background-image: cover;
+    border-radius: 5px;
+  }
+}
+
+/*  BARRA DE PESQUISA */
+
+.search {
+  width: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & input {
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 10px 0 10px 30px;
+    border-radius: 5px;
+    border: 0.5px solid #eca0a0;
+    background-color: white;
+    color: #000;
+  }
+
+  & .icon_search {
+    position: absolute;
+    color: black;
+    left: 5px;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/*  FILTRO DE PREÇO */
+
+.filter {
+  width: 25%;
+  display: flex;
+
+  & .minPrice,
+  & .maxPrice {
+    font-size: 1.4rem;
+    background-color: white;
+    padding: 9px 0;
+    border: 0.5px solid #eca0a0;
+    width: 100%;
+    color: #000;
+    text-align: center;
+  }
+
+  & .minPrice {
+    border-radius: 5px 0 0 5px;
+  }
+
+  & button {
+    padding: 2px;
+    width: 100%;
+    background-color: #eca0a0;
+    border: 2px solid #eca0a0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  & button:hover {
+    background-color: #d79494;
+    border-color: #d79494;
+  }
+}
+
+/* PERFIL E MENU */
+
+.menu {
+  .icon {
+    display: flex;
+    display: inline-flex;
+    background-color: #eca0a0;
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon:hover {
+    background-color: #d79494;
+    transform: scale(1.03);
+  }
+  .profile {
+    font-size: 3.5rem;
+  }
+}
+
+/* BARRA DE NAVEGAÇÃO */
+
+.header_nav {
+  width: 100%;
+  background-color: #eca0a0;
+  border-radius: 5px;
+  margin: 30px 0 0 0;
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  a {
+    display: block;
+    padding: 8% 0;
+    text-decoration: none;
+    color: black;
+  }
+
+  li:hover {
+    background-color: #d79494;
+  }
+}

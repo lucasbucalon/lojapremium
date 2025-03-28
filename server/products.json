@@ -1,0 +1,924 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas",
+      "Camisas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão com estampa moderna.",
+    "oferta": true
+  },
+  {
+    "id": 2,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "azul"
+    ],
+    "price": 35.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com design moderno.",
+    "oferta": false
+  },
+  {
+    "id": 3,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex de algodão com corte confortável.",
+    "oferta": false
+  },
+  {
+    "id": 4,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 99.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 59.99,
+    "description": "Camiseta masculina básica, ideal para o dia a dia.",
+    "oferta": true
+  },
+  {
+    "id": 5,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com ajuste perfeito e conforto.",
+    "oferta": false
+  },
+  {
+    "id": 6,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "azul",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex confortável, disponível em várias cores.",
+    "oferta": false
+  },
+  {
+    "id": 7,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 27.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina estilo clássico, para qualquer ocasião.",
+    "oferta": false
+  },
+  {
+    "id": 8,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina elegante, para quem gosta de conforto e estilo.",
+    "oferta": false
+  },
+  {
+    "id": 9,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex com estampa moderna, ideal para todos.",
+    "oferta": false
+  },
+  {
+    "id": 10,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão, muito confortável.",
+    "oferta": false
+  },
+  {
+    "id": 11,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina, perfeita para qualquer estação do ano.",
+    "oferta": false
+  },
+  {
+    "id": 12,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex com diversas opções de cores.",
+    "oferta": false
+  },
+  {
+    "id": 13,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina confortável, ideal para o verão.",
+    "oferta": false
+  },
+  {
+    "id": 14,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com modelo moderno e estilo único.",
+    "oferta": false
+  },
+  {
+    "id": 15,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex confortável e de alta qualidade.",
+    "oferta": false
+  },
+  {
+    "id": 16,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão com estampa moderna.",
+    "oferta": true
+  },
+  {
+    "id": 17,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 35.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com design moderno.",
+    "oferta": false
+  },
+  {
+    "id": 18,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex de algodão com corte confortável.",
+    "oferta": false
+  },
+  {
+    "id": 19,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 99.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 59.99,
+    "description": "Camiseta masculina básica, ideal para o dia a dia.",
+    "oferta": true
+  },
+  {
+    "id": 20,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com ajuste perfeito e conforto.",
+    "oferta": false
+  },
+  {
+    "id": 21,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "azul",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex confortável, disponível em várias cores.",
+    "oferta": false
+  },
+  {
+    "id": 22,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 27.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina estilo clássico, para qualquer ocasião.",
+    "oferta": false
+  },
+  {
+    "id": 23,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina elegante, para quem gosta de conforto e estilo.",
+    "oferta": false
+  },
+  {
+    "id": 24,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex com estampa moderna, ideal para todos.",
+    "oferta": false
+  },
+  {
+    "id": 25,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão, muito confortável.",
+    "oferta": false
+  },
+  {
+    "id": 26,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina, perfeita para qualquer estação do ano.",
+    "oferta": false
+  },
+  {
+    "id": 27,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex com diversas opções de cores.",
+    "oferta": false
+  },
+  {
+    "id": 28,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina confortável, ideal para o verão.",
+    "oferta": false
+  },
+  {
+    "id": 29,
+    "name": "Camiseta Feminina",
+    "cor": [
+      "branco",
+      "rosa"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "feminino"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta feminina com modelo moderno e estilo único.",
+    "oferta": false
+  },
+  {
+    "id": 30,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex confortável e de alta qualidade.",
+    "oferta": false
+  },
+  {
+    "id": 31,
+    "name": "Camiseta Unisex",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png",
+      "/public/imgProdutos/11.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino",
+      "unisex"
+    ],
+    "category": [
+      "Roupas"
+    ],
+    "discountPrice": 27.99,
+    "description": "Camiseta unisex confortável e de alta qualidade.",
+    "oferta": false
+  },
+  {
+    "id": 32,
+    "name": "Camiseta Masculina",
+    "cor": [
+      "branco",
+      "preto"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão com estampa moderna.",
+    "oferta": false
+  },
+  {
+    "id": 33,
+    "name": "Camiseta Premium",
+    "cor": [
+      "branco",
+      "preto",
+      "azul"
+    ],
+    "price": 30.99,
+    "image": [
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/11.png",
+      "/public/imgProdutos/10.jpg",
+      "/public/imgProdutos/12.png"
+    ],
+    "type": [
+      "masculino",
+      "feminino"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 25.99,
+    "description": "Camiseta masculina de algodão com estampa moderna.",
+    "oferta": true
+  },
+  {
+    "id": 34,
+    "name": "Jaqueta de Couro",
+    "cor": [
+      "preto",
+      "marrom"
+    ],
+    "price": 199.99,
+    "image": [
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/9.jpg"
+    ],
+    "type": [
+      "masculino",
+      "feminino"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 179.99,
+    "description": "Jaqueta de couro sintético resistente e estilosa.",
+    "oferta": true
+  },
+  {
+    "id": 35,
+    "name": "Tênis Esportivo",
+    "cor": [
+      "azul",
+      "branco",
+      "cinza"
+    ],
+    "price": 149.99,
+    "image": [
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/8.jpg"
+    ],
+    "type": [
+      "unisex"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 139.99,
+    "description": "Tênis confortável para corrida e academia.",
+    "oferta": false
+  },
+  {
+    "id": 36,
+    "name": "Mochila Casual",
+    "cor": [
+      "preto",
+      "vermelho",
+      "azul"
+    ],
+    "price": 89.90,
+    "image": [
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/7.jpg"
+    ],
+    "type": [
+      "unisex"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 79.90,
+    "description": "Mochila prática e resistente para o dia a dia.",
+    "oferta": true
+  },
+  {
+    "id": 37,
+    "name": "Óculos de Sol",
+    "cor": [
+      "preto",
+      "dourado"
+    ],
+    "price": 59.90,
+    "image": [
+      "/public/imgProdutos/7.jpg",
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/8.jpg"
+    ],
+    "type": [
+      "masculino",
+      "feminino"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 49.90,
+    "description": "Óculos de sol com proteção UV e design moderno.",
+    "oferta": false
+  },
+  {
+    "id": 38,
+    "name": "Calça Jeans Slim",
+    "cor": [
+      "azul",
+      "preto"
+    ],
+    "price": 129.90,
+    "image": [
+      "/public/imgProdutos/9.jpg",
+      "/public/imgProdutos/8.jpg",
+      "/public/imgProdutos/7.jpg"
+    ],
+    "type": [
+      "masculino"
+    ],
+    "category": [
+      "Camisas"
+    ],
+    "discountPrice": 119.90,
+    "description": "Calça jeans slim fit confortável e estilosa.",
+    "oferta": true
+  }
+]

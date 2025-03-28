@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Notebook",
+    "image": "public/imageC/c1.jpg",
+    "link": "/Produtos/Camisas"
+  },
+  {
+    "id": 2,
+    "title": "Notebook",
+    "image": "public/imageC/c2.jpg",
+    "link": "/Produtos/Roupas"
+  },
+  {
+    "id": 3,
+    "title": "Notebook",
+    "image": "public/imageC/c3.jpg",
+    "link": "/Produtos/Camisas"
+  },
+  {
+    "id": 4,
+    "title": "Notebook",
+    "image": "public/imageC/c4.jpg",
+    "link": "/Produtos/Roupas"
+  },
+  {
+    "id": 5,
+    "title": "Notebook",
+    "image": "public/imageC/c5.jpg",
+    "link": "/Produtos/Camisas"
+  },
+  {
+    "id": 6,
+    "title": "Notebook",
+    "image": "public/imageC/c6.jpg",
+    "link": "/Produtos/Roupas"
+  },
+  {
+    "id": 7,
+    "title": "Notebook",
+    "image": "public/imageC/c7.jpg",
+    "link": "/Produtos/Camisas"
+  },
+  {
+    "id": 8,
+    "title": "Notebook",
+    "image": "public/imageC/c8.jpg",
+    "link": "/Produtos/Roupas"
+  },
+  {
+    "id": 9,
+    "title": "Notebook",
+    "image": "public/imageC/c9.jpg",
+    "link": "/Produtos/Camisas"
+  }
+]

@@ -1,0 +1,118 @@
+.product_wrapper {
+  margin: 30px 0;
+}
+
+.product_detail {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  background-color: rgb(194, 197, 225);
+  border-radius: 10px;
+}
+
+.img_carousel {
+  width: 60%;
+  display: flex;
+  border-radius: 10px;
+  padding: 2px;
+
+  .img_destaque {
+    border-radius: 10px;
+    width: 82%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 2px 10px 0 0;
+    padding: 7px;
+    max-height: 590px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl;
+    scrollbar-width: thin;
+    scrollbar-color: #eca0a0 rgb(194, 197, 225);
+  }
+
+  .img_res {
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .img_res.active {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.product_info {
+  width: 50%;
+}
+
+.name {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+.description {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.price {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.original_price {
+  text-decoration: line-through;
+  color: red;
+}
+.offer_price {
+  font-weight: bold;
+  color: green;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.type {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.buttons {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#comprarAgora {
+  background-color: #28a745;
+  color: white;
+}
+#adicionarCarrinho {
+  background-color: #007bff;
+  color: white;
+}
