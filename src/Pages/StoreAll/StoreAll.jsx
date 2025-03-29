@@ -1,10 +1,10 @@
 import { Icon } from "@iconify-icon/react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Profile from "../../components/Profile/Profile";
 import style from "./storeAll.module.css";
 
 export default function StoreAll() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [produtos, setProdutos] = useState([]);
   const [produtosFiltrados, setProdutosFiltrados] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -81,12 +81,10 @@ export default function StoreAll() {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      if (
-        event.target.classList.contains("minPrice") ||
-        event.target.classList.contains("maxPrice")
-      ) {
+      event.target.classList.contains("minPrice") ||
+        event.target.classList.contains("maxPrice");
+      {
         filtrarPorPreco();
-      } else {
         aplicarFiltro(busca);
         setBusca("");
       }
@@ -114,43 +112,43 @@ export default function StoreAll() {
     const startIndex = (paginaAtual - 1) * produtosPorPagina;
     const endIndex = paginaAtual * produtosPorPagina;
     return produtosFiltrados.slice(startIndex, endIndex).map((produto) => (
-      <div className={style.item_box} key={produto.id}>
+      <div key={produto.id} className={`${style.product} ${style.active}`}>
         <div
           className={style.item}
-          onClick={() => navigate(`/detalhes/${produto.id}`)}
+          onClick={() => navigate(`/Detalhes/${produto.id}`)}
         >
-          <img src={produto.image[0]} alt={produto.name} />
-          <h2 className={style.name}>{produto.name}</h2>
+          <img src={produto.image?.[0]} alt={produto.name} />
+
           <div className={style.des_box}>
             <p>{produto.description}</p>
           </div>
-          <div className={style.prices}>
-            <span
-              className={style.origin_price}
-              style={{
-                color: produto.oferta ? "#555" : "",
-                textDecoration: produto.oferta ? "line-through" : "",
-                fontSize: produto.oferta ? "1.6rem" : "",
-                width: produto.oferta ? "100%" : "",
-                marginTop: produto.oferta ? "0" : "",
-              }}
-            >
-              R$ {produto.price.toFixed(2)}
-            </span>
-            {produto.oferta && (
-              <span className={style.offer_price}>
-                R$ {produto.discountPrice.toFixed(2)}
-              </span>
-            )}
-          </div>
-          <div className={style.colors}>
-            Cores: {produto.cor?.join(", ") || ""}
-          </div>
-          <div className={style.type}>
-            Tipo: {produto.type?.join(", ") || ""}
-          </div>
         </div>
-        <button onClick={() => alert("Adicionado ao carrinho")}>
+        <div
+          className={style.products_prices}
+          onClick={() => navigate(`/Detalhes/${produto.id}`)}
+        >
+          <span
+            className={produto.oferta ? style.old_price : style.original_prices}
+          >
+            R$ {produto.price.toFixed(2)}
+          </span>
+          {produto.oferta && produto.discountPrice && (
+            <span className={style.offer_price}>
+              R$ {produto.discountPrice.toFixed(2)}
+            </span>
+          )}
+        </div>
+
+        <div style={{ display: "none" }}>
+          <h2>{produto.name}</h2>
+          <div>{produto.cor}</div>
+          <div>{produto.type}</div>
+        </div>
+
+        <button
+          className={style.cart_button}
+          onClick={() => alert("Adicionado ao carrinho")}
+        >
           <Icon icon="solar:cart-plus-linear" width="24" height="24" />
         </button>
       </div>
@@ -189,30 +187,8 @@ export default function StoreAll() {
   }
   return (
     <>
-      <header id="inicio" className={style.loja}>
-        {/* BARRA LATERAL DE COMPRA  */}
-        <div
-          className={style.cart}
-          style={{ right: isCartOpen ? "0" : "-400px" }}
-        >
-          <button className={style.config}>
-            <Icon className={style.icon_config} icon="ph:gear" />
-            <p>Configurações</p>
-          </button>
-          <h2>Seu Carrinho</h2>
-          <div className={style.listCart}></div>
-          <div className={style.btn}>
-            <button
-              className={style.close}
-              onClick={() => setIsCartOpen(false)}
-            >
-              FECHAR
-            </button>
-            <button>COMPRAR</button>
-          </div>
-        </div>
-
-        <div className={style.content_header}>
+      <header id="inicio" className={style.header}>
+        <div className={style.header_content}>
           {/* LOGO DA LOJA */}
           <div className={style.logo}>
             <img src="/image/logo.jpg" alt="logo" />
@@ -251,41 +227,43 @@ export default function StoreAll() {
             <button onClick={filtrarPorPreco}>Filtrar</button>
           </div>
 
-          {/* PERFIL E MENU */}
-          <div className={style.menu}>
-            <div className={style.icon} onClick={() => setIsCartOpen(true)}>
-              <Icon className={style.profile} icon="iconamoon:profile-light" />
-            </div>
-          </div>
+          <Profile />
 
           {/* BARRA DE NAVEGAÇÃO */}
-          <nav>
+          <nav className={style.header_nav}>
             <ul>
               <li>
                 <a href="/">Loja</a>
               </li>
               <li>
-                <a onClick={() => filtrarProdutosPorTipo("ofertas")}>Ofertas</a>
+                <a href="/Todos">Todos</a>
               </li>
               <li>
-                <a onClick={() => filtrarProdutosPorTipo("todos")}>Todos</a>
+                <a href="#" onClick={() => filtrarProdutosPorTipo("ofertas")}>
+                  Ofertas
+                </a>
               </li>
               <li>
-                <a onClick={() => filtrarProdutosPorTipo("roupas")}>Roupas</a>
+                <a href="#" onClick={() => filtrarProdutosPorTipo("unisexx")}>
+                  Unisexx
+                </a>
               </li>
               <li>
-                <a onClick={() => filtrarProdutosPorTipo("masculino")}>
+                <a href="#" onClick={() => filtrarProdutosPorTipo("roupas")}>
+                  Roupas
+                </a>
+              </li>
+              <li>
+                <a href="#" onClick={() => filtrarProdutosPorTipo("masculino")}>
                   Masculino
                 </a>
               </li>
               <li>
-                <a onClick={() => filtrarProdutosPorTipo("feminino")}>
+                <a href="#" onClick={() => filtrarProdutosPorTipo("feminino")}>
                   Feminino
                 </a>
               </li>
-              <li>
-                <a onClick={() => filtrarProdutosPorTipo("unisex")}>Unisex</a>
-              </li>
+
               <li>
                 <a href="/Sobre">Sobre Nós</a>
               </li>

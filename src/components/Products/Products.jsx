@@ -81,7 +81,7 @@ export default function Products() {
             <div key={tipo} className={style.products_container}>
               <div
                 className={style.products_title}
-                onClick={() => navigate(`/Produtos/${tipo}`)}
+                onClick={() => navigate(`/Categorias/${tipo}`)}
               >
                 <h2>{tipo}</h2>
                 <span></span>
@@ -108,25 +108,28 @@ export default function Products() {
                         onClick={() => navigate(`/Detalhes/${produto.id}`)}
                       >
                         <img src={produto.image?.[0]} alt={produto.name} />
+
                         <div className={style.des_box}>
                           <p>{produto.description}</p>
                         </div>
                       </div>
                       <div
                         className={style.products_prices}
-                        onClick={() => navigate(`/detalhes/${produto.id}`)}
+                        onClick={() => navigate(`/Detalhes/${produto.id}`)}
                       >
                         <span
-                          className={style.prices}
-                          style={{
-                            color: produto.oferta ? "#555" : "",
-                            textDecoration: produto.oferta
-                              ? "line-through"
-                              : "",
-                            fontSize: produto.oferta ? "1.6rem" : "",
-                            width: produto.oferta ? "100%" : "",
-                            marginTop: produto.oferta ? "0" : "",
-                          }}
+                          className={
+                            produto.oferta ? style.old_price : style.original_prices
+                          }
+                          // style={{
+                          //   color: produto.oferta ? "#555" : "",
+                          //   textDecoration: produto.oferta
+                          //     ? "line-through"
+                          //     : "",
+                          //   fontSize: produto.oferta ? "1.6rem" : "",
+                          //   width: produto.oferta ? "100%" : "",
+                          //   marginTop: produto.oferta ? "0" : "",
+                          // }}
                         >
                           R$ {produto.price.toFixed(2)}
                         </span>
@@ -135,6 +138,12 @@ export default function Products() {
                             R$ {produto.discountPrice.toFixed(2)}
                           </span>
                         )}
+                      </div>
+
+                      <div style={{ display: "none" }}>
+                        <h2>{produto.name}</h2>
+                        <div>{produto.cor}</div>
+                        <div>{produto.type}</div>
                       </div>
 
                       <button

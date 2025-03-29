@@ -23,17 +23,12 @@ body {
   position: relative;
   max-height: 100vh;
   text-rendering: optimizeLegibility;
-  background: linear-gradient(
-    to top,
-    var(--background-color-top),
-    var(--background-color-botton)
-  );
+  background: var(--background);
   background-attachment: fixed;
 }
 
 :root {
-  --background-color-top: #eca0a0;
-  --background-color-botton: rgb(194, 197, 225);
+  --background: rgb(240, 211, 233);
 }
 
 @media (prefers-color-scheme: dark) {

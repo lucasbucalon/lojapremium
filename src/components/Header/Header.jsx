@@ -1,11 +1,11 @@
 import { Icon } from "@iconify-icon/react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Profile from "../Profile/Profile";
 
 import style from "./header.module.css";
 
 export default function Header() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [produtos, setProdutos] = useState([]);
   const [produtosFiltrados, setProdutosFiltrados] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -20,7 +20,7 @@ export default function Header() {
   useEffect(() => {
     const carregarProdutos = async () => {
       try {
-        const response = await fetch("/produtos.json");
+        const response = await fetch("/server/products.json");
         if (!response.ok) throw new Error("Erro ao carregar produtos");
         const data = await response.json();
         setProdutos(data);
@@ -34,6 +34,14 @@ export default function Header() {
 
     carregarProdutos();
   }, []);
+
+  if (carregando) {
+    return <p>Carregando...</p>;
+  }
+
+  if (erro) {
+    return <p>{erro}</p>;
+  }
 
   // APLICAR FILTRO DE BUSCA
   const aplicarFiltro = (busca) => {
@@ -85,7 +93,7 @@ export default function Header() {
         filtrarPorPreco();
       } else {
         aplicarFiltro(busca);
-        setBusca("");
+        // setBusca("");
       }
     }
   };
@@ -107,25 +115,6 @@ export default function Header() {
 
   return (
     <header id="inicio" className={style.header}>
-      {/* BARRA LATERAL DE COMPRA  */}
-      <div
-        className={style.cart}
-        style={{ right: isCartOpen ? "0" : "-400px" }}
-      >
-        <button className={style.config}>
-          <Icon className={style.icon_config} icon="ph:gear" />
-          <p>Configurações</p>
-        </button>
-        <h2>Seu Carrinho</h2>
-        <div className={style.list_cart}></div>
-        <div className={style.btn}>
-          <button className={style.close} onClick={() => setIsCartOpen(false)}>
-            FECHAR
-          </button>
-          <button>COMPRAR</button>
-        </div>
-      </div>
-
       <div className={style.header_content}>
         {/* LOGO DA LOJA */}
         <div className={style.logo}>
@@ -165,12 +154,7 @@ export default function Header() {
           <button onClick={filtrarPorPreco}>Filtrar</button>
         </div>
 
-        {/* PERFIL E MENU */}
-        <div className={style.menu}>
-          <div className={style.icon} onClick={() => setIsCartOpen(true)}>
-            <Icon className={style.profile} icon="iconamoon:profile-light" />
-          </div>
-        </div>
+        <Profile />
 
         {/* BARRA DE NAVEGAÇÃO */}
         <nav className={style.header_nav}>
