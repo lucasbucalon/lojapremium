@@ -160,42 +160,87 @@ export default function Header() {
         <nav className={style.header_nav}>
           <ul>
             <li>
-              <a href="/">Loja</a>
+              <a href="/">Inicio</a>
             </li>
-            <li>
-              <a href="/Todos">Todos</a>
-            </li>
-            <li>
-              <a href="#" onClick={() => filtrarProdutosPorTipo("ofertas")}>
-                Ofertas
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => filtrarProdutosPorTipo("unisexx")}>
-                Unisexx
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => filtrarProdutosPorTipo("roupas")}>
-                Roupas
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => filtrarProdutosPorTipo("masculino")}>
-                Masculino
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={() => filtrarProdutosPorTipo("feminino")}>
-                Feminino
-              </a>
-            </li>
-
             <li>
               <a href="/Sobre">Sobre Nós</a>
             </li>
             <li>
               <a href="#contato">Contato</a>
+            </li>
+            <li>
+              <a href="/Todos">Todos</a>
+            </li>
+            <li>
+              <a href="#" onClick={() => navigate("/Ofertas")}>
+                Ofertas
+              </a>
+            </li>
+
+            {/* Categorias */}
+            <li className={style.categorias}>
+              <a href="#">
+                Categorias{" "}
+                <Icon icon="icon-park-solid:down-one" className={style.icon} />
+              </a>
+              <Icon icon="teenyicons:up-solid" className={style.up} />
+
+              <ul className={style.categorias_list}>
+                {[
+                  ...new Set(
+                    produtos.flatMap((produto) =>
+                      produto.category?.map(
+                        (categoria) =>
+                          categoria
+                            .trim()
+                            .toLowerCase()
+                            .replace(/^\w/, (c) => c.toUpperCase()) // Corrige a primeira letra
+                      )
+                    )
+                  ),
+                ].map((categoria, index) => (
+                  <p
+                    key={index}
+                    onClick={() => navigate(`/Categorias/${categoria}`)}
+                  >
+                    # {categoria || "Categoria Indefinida"}
+                  </p>
+                ))}
+              </ul>
+            </li>
+
+            {/* Catálogo */}
+            <li className={style.catalogos}>
+              <a href="#">
+                Catálogo{" "}
+                <Icon icon="icon-park-solid:down-one" className={style.icon} />
+              </a>
+              <Icon
+                icon="teenyicons:up-solid"
+                width="15"
+                height="15"
+                className={style.up}
+              />
+
+              <ul className={style.catalogos_list}>
+                {[
+                  ...new Set(
+                    produtos.flatMap((produto) =>
+                      produto.type?.map(
+                        (tipo) =>
+                          tipo
+                            .trim()
+                            .toLowerCase()
+                            .replace(/^\w/, (c) => c.toUpperCase()) // Corrige a primeira letra
+                      )
+                    )
+                  ),
+                ].map((tipo, index) => (
+                  <p key={index} onClick={() => navigate(`/Catalogos/${tipo}`)}>
+                    # {tipo || "Tipo Indefinido"}
+                  </p>
+                ))}
+              </ul>
             </li>
           </ul>
         </nav>

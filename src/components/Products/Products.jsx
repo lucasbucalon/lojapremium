@@ -119,17 +119,10 @@ export default function Products() {
                       >
                         <span
                           className={
-                            produto.oferta ? style.old_price : style.original_prices
+                            produto.oferta
+                              ? style.old_price
+                              : style.original_prices
                           }
-                          // style={{
-                          //   color: produto.oferta ? "#555" : "",
-                          //   textDecoration: produto.oferta
-                          //     ? "line-through"
-                          //     : "",
-                          //   fontSize: produto.oferta ? "1.6rem" : "",
-                          //   width: produto.oferta ? "100%" : "",
-                          //   marginTop: produto.oferta ? "0" : "",
-                          // }}
                         >
                           R$ {produto.price.toFixed(2)}
                         </span>

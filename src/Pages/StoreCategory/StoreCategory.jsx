@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Profile from "../../components/Profile/Profile";
 
-import style from "./storeDetails.module.css";
+import style from "./storeCategory.module.css";
 
-export default function StoreDetails() {
+export default function StoreCategory() {
   const { category } = useParams(); // Obtém a categoria da URL
   const [produtos, setProdutos] = useState([]);
   const [produtosFiltrados, setProdutosFiltrados] = useState([]);

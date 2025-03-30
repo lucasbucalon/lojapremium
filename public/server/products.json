@@ -16,7 +16,12 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino",
+      "Calça",
+      "Calça jeans",
+      "Camisas",
+      "Shorts",
+      "Brinco"
     ],
     "category": [
       "Roupas",
@@ -40,7 +45,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -64,9 +69,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -89,7 +94,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -112,7 +117,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -136,9 +141,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -161,7 +166,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -184,7 +189,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -208,9 +213,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -233,7 +238,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -256,7 +261,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -280,9 +285,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -305,7 +310,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -328,7 +333,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -352,9 +357,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -377,7 +382,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -400,7 +405,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -424,9 +429,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -449,7 +454,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -472,7 +477,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -496,9 +501,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -521,7 +526,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -544,7 +549,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -568,9 +573,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -593,7 +598,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -616,7 +621,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -640,9 +645,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -665,7 +670,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Roupas"
@@ -688,7 +693,7 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "feminino"
+      "Feminino"
     ],
     "category": [
       "Roupas"
@@ -712,9 +717,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -738,9 +743,9 @@
       "/imgProdutos/11.png"
     ],
     "type": [
-      "masculino",
-      "feminino",
-      "unisex"
+      "Masculino",
+      "Feminino",
+      "Unisex"
     ],
     "category": [
       "Roupas"
@@ -766,7 +771,7 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Camisas"
@@ -792,8 +797,8 @@
       "/imgProdutos/12.png"
     ],
     "type": [
-      "masculino",
-      "feminino"
+      "Masculino",
+      "Feminino"
     ],
     "category": [
       "Camisas"
@@ -816,8 +821,8 @@
       "/imgProdutos/9.jpg"
     ],
     "type": [
-      "masculino",
-      "feminino"
+      "Masculino",
+      "Feminino"
     ],
     "category": [
       "Camisas"
@@ -841,7 +846,7 @@
       "/imgProdutos/8.jpg"
     ],
     "type": [
-      "unisex"
+      "Unisex"
     ],
     "category": [
       "Camisas"
@@ -865,7 +870,7 @@
       "/imgProdutos/7.jpg"
     ],
     "type": [
-      "unisex"
+      "Unisex"
     ],
     "category": [
       "Camisas"
@@ -888,8 +893,8 @@
       "/imgProdutos/8.jpg"
     ],
     "type": [
-      "masculino",
-      "feminino"
+      "Masculino",
+      "Feminino"
     ],
     "category": [
       "Camisas"
@@ -912,7 +917,7 @@
       "/imgProdutos/7.jpg"
     ],
     "type": [
-      "masculino"
+      "Masculino"
     ],
     "category": [
       "Camisas"
