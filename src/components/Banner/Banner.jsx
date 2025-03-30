@@ -4,19 +4,18 @@ import style from "./banner.module.css";
 
 export default function Banner() {
   const [banners, setBanners] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(2); // Começa no índice 2 por conta dos slides clonados
+  const [currentIndex, setCurrentIndex] = useState(2); // Mantém o índice do banner inicial no centro
   const [isAnimating, setIsAnimating] = useState(false);
   const slideListRef = useRef(null);
   const navigate = useNavigate();
   const intervalRef = useRef(null);
 
-  // Carrega os banners da API
   useEffect(() => {
     const fetchBanners = async () => {
       try {
         const response = await fetch("/server/banners.json");
         const data = await response.json();
-        setBanners([...data.slice(-2), ...data, ...data.slice(0, 2)]); // Clona os slides para efeito de looping
+        setBanners([...data.slice(-2), ...data, ...data.slice(0, 2)]);
       } catch (error) {
         console.error("Erro ao carregar banners:", error);
       }
@@ -24,39 +23,29 @@ export default function Banner() {
     fetchBanners();
   }, []);
 
-  // Função para avançar para o próximo slide
   const handleNext = useCallback(() => {
-    if (isAnimating) return; // Impede múltiplas animações simultâneas
+    if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => prev + 1);
   }, [isAnimating]);
 
-  // Função para voltar ao slide anterior
   const handlePrev = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => prev - 1);
   }, [isAnimating]);
 
-  // Inicia o carrossel automático
-  const startAutoSlide = useCallback(() => {
+  useEffect(() => {
     intervalRef.current = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 8000);
+    return () => clearInterval(intervalRef.current);
   }, [handleNext]);
 
-  // Gerencia o carrossel automático
-  useEffect(() => {
-    startAutoSlide();
-    return () => clearInterval(intervalRef.current);
-  }, [startAutoSlide]);
-
-  // Lida com a transição e o loop infinito
   useEffect(() => {
     if (!slideListRef.current || banners.length === 0) return;
 
     const slideList = slideListRef.current;
-
     const handleTransitionEnd = () => {
       if (currentIndex >= banners.length - 2) {
         setTimeout(() => {
@@ -111,18 +100,12 @@ export default function Banner() {
               className={style.banner_item}
               onClick={() => navigate(banner.link)}
             >
-              <div className={style.banner_content}>
-                <img
-                  className={style.banner_image}
-                  src={banner.image}
-                  alt={banner.title}
-                  loading="lazy"
-                />
-                <div className={style.banner_description}>
-                  <h3>{banner.title}</h3>
-                  <p>{banner.description}</p>
-                </div>
-              </div>
+              <img
+                className={style.banner_image}
+                src={banner.image}
+                alt={banner.title}
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
@@ -140,13 +123,25 @@ export default function Banner() {
           </svg>
         </button>
       </div>
+
+      <div className={style.indicators}>
+        {banners.slice(2, -2).map((_, index) => (
+          <div
+            key={index}
+            className={
+              currentIndex === index + 2
+                ? style.active_indicator
+                : style.indicator
+            }
+            onClick={() => setCurrentIndex(index + 2)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
-// Função para centralizar os slides corretamente
 function getCenterPosition(index) {
-  const slideWidth = window.innerWidth * 0.9; // 90vw do CSS
-  const margin = (window.innerWidth - slideWidth) / 2;
-  return margin - index * slideWidth;
+  const slideWidth = window.innerWidth; // A largura total da tela
+  return -index * slideWidth; // Ajusta para mover pela largura do banner completo
 }

@@ -41,16 +41,14 @@ export default function Profile() {
   return (
     <div className={style.profile}>
       <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
+        <Icon className={style.icon} icon="line-md:heart" />
+      </div>
+      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
+        <Icon className={style.icon} icon="solar:cart-large-2-linear" />
+      </div>
+      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
         <Icon className={style.icon} icon="iconamoon:profile-light" />
       </div>
     </div>
-    // <section className={style.profile_wrapper}>
-    //   {profiles.map((profile) => (
-    //     <div key={profile.id} className={style.profile_container}>
-    //       <img src={profile.image} alt="" />
-    //       <h1>deu certooo</h1>
-    //     </div>
-    //   ))}
-    // </section>
   );
 }
