@@ -20,11 +20,43 @@
 /* LOGO DA LOJA */
 
 .logo {
-  width: 15%;
+  width: 17%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Impede que o brilho ultrapasse a imagem */
+
   & img {
     width: 100%;
-    background-image: cover;
     border-radius: 5px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 120%;
+    height: 95%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    transform: skewX(-25deg);
+    animation: brilho 10s infinite;
+  }
+}
+
+@keyframes brilho {
+  0% {
+    left: -100%;
+  }
+  5% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
   }
 }
 

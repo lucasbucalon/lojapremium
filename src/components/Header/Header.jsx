@@ -2,18 +2,13 @@ import { Icon } from "@iconify-icon/react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Profile from "../Profile/Profile";
-
 import style from "./header.module.css";
 
 export default function Header() {
   const [produtos, setProdutos] = useState([]);
-  const [produtosFiltrados, setProdutosFiltrados] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [busca, setBusca] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
-
   const navigate = useNavigate();
 
   // Carregar produtos
@@ -24,7 +19,6 @@ export default function Header() {
         if (!response.ok) throw new Error("Erro ao carregar produtos");
         const data = await response.json();
         setProdutos(data);
-        setProdutosFiltrados(data);
       } catch (error) {
         setErro(error.message);
       } finally {
@@ -35,89 +29,27 @@ export default function Header() {
     carregarProdutos();
   }, []);
 
-  if (carregando) {
-    return <p>Carregando...</p>;
-  }
-
-  if (erro) {
-    return <p>{erro}</p>;
-  }
-
-  // APLICAR FILTRO DE BUSCA
-  const aplicarFiltro = (busca) => {
-    const produtosFiltrados = busca.trim()
-      ? produtos.filter((produto) =>
-          [
-            produto.name,
-            ...(produto.cor || []),
-            ...(produto.type || []),
-            produto.description,
-          ].some((campo) => campo.toLowerCase().includes(busca.toLowerCase()))
-        )
-      : [...produtos];
-
-    setProdutosFiltrados(produtosFiltrados);
-  };
-
-  // FILTRAR POR PREÇO
-  const filtrarPorPreco = () => {
-    const min = parseFloat(minPrice) || 0;
-    const max = parseFloat(maxPrice) || Infinity;
-    const produtosFiltrados = produtos.filter(
-      (produto) => produto.price >= min && produto.price <= max
-    );
-
-    setProdutosFiltrados(produtosFiltrados);
-  };
-
-  const handleMinPriceChange = (e) => {
-    const value = e.target.value;
-    if (/^\d*\.?\d*$/.test(value) || value === "") {
-      setMinPrice(value);
-    }
-  };
-
-  const handleMaxPriceChange = (e) => {
-    const value = e.target.value;
-    if (/^\d*\.?\d*$/.test(value) || value === "") {
-      setMaxPrice(value);
-    }
-  };
-
+  // Filtrar produtos com base nos filtros de busca
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      if (
-        event.target.classList.contains("minPrice") ||
-        event.target.classList.contains("maxPrice")
-      ) {
-        filtrarPorPreco();
+      if (busca.trim()) {
+        // Se houver algo na busca, buscar com o termo
+        navigate(`/Todos?search=${encodeURIComponent(busca.trim())}`);
       } else {
-        aplicarFiltro(busca);
-        // setBusca("");
+        // Se a busca estiver vazia, navegar para a página de todos os produtos
+        navigate(`/Todos`);
       }
     }
   };
 
-  // FILTRAR POR TIPO
-  const filtrarProdutosPorTipo = (tipo) => {
-    let produtosFiltrados;
-    if (tipo === "ofertas") {
-      produtosFiltrados = produtos.filter((produto) => produto.oferta === true);
-    } else if (tipo !== "todos") {
-      produtosFiltrados = produtos.filter((produto) =>
-        produto.type.includes(tipo)
-      );
-    } else {
-      produtosFiltrados = [...produtos];
-    }
-    setProdutosFiltrados(produtosFiltrados);
-  };
+  if (carregando) return <p>Carregando...</p>;
+  if (erro) return <p>{erro}</p>;
 
   return (
     <header id="inicio" className={style.header}>
       <div className={style.header_content}>
         {/* LOGO DA LOJA */}
-        <div className={style.logo}>
+        <div className={style.logo} onClick={() => navigate("/")}>
           <img src="/image/logo.jpg" alt="logo" />
         </div>
 
@@ -125,33 +57,12 @@ export default function Header() {
         <div className={style.search}>
           <input
             type="text"
-            placeholder="Buscar Produto..."
+            placeholder="Pesquisar Produto..."
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             onKeyDown={handleKeyDown}
           />
           <Icon className={style.icon_search} icon="tabler:search" />
-        </div>
-
-        {/* FILTRO DE PREÇO */}
-        <div className={style.filter}>
-          <input
-            className={style.minPrice}
-            type="text"
-            placeholder="Preço Min..."
-            value={minPrice}
-            onChange={handleMinPriceChange}
-            onKeyDown={handleKeyDown}
-          />
-          <input
-            className={style.maxPrice}
-            type="text"
-            placeholder="Preço Max..."
-            value={maxPrice}
-            onChange={handleMaxPriceChange}
-            onKeyDown={handleKeyDown}
-          />
-          <button onClick={filtrarPorPreco}>Filtrar</button>
         </div>
 
         <Profile />
@@ -184,20 +95,9 @@ export default function Header() {
                 <Icon icon="icon-park-solid:down-one" className={style.icon} />
               </a>
               <Icon icon="teenyicons:up-solid" className={style.up} />
-
               <ul className={style.categorias_list}>
                 {[
-                  ...new Set(
-                    produtos.flatMap((produto) =>
-                      produto.category?.map(
-                        (categoria) =>
-                          categoria
-                            .trim()
-                            .toLowerCase()
-                            .replace(/^\w/, (c) => c.toUpperCase()) // Corrige a primeira letra
-                      )
-                    )
-                  ),
+                  ...new Set(produtos.flatMap((produto) => produto.category)),
                 ].map((categoria, index) => (
                   <p
                     key={index}
@@ -221,25 +121,17 @@ export default function Header() {
                 height="15"
                 className={style.up}
               />
-
               <ul className={style.catalogos_list}>
-                {[
-                  ...new Set(
-                    produtos.flatMap((produto) =>
-                      produto.type?.map(
-                        (tipo) =>
-                          tipo
-                            .trim()
-                            .toLowerCase()
-                            .replace(/^\w/, (c) => c.toUpperCase()) // Corrige a primeira letra
-                      )
-                    )
-                  ),
-                ].map((tipo, index) => (
-                  <p key={index} onClick={() => navigate(`/Catalogos/${tipo}`)}>
-                    # {tipo || "Tipo Indefinido"}
-                  </p>
-                ))}
+                {[...new Set(produtos.flatMap((produto) => produto.type))].map(
+                  (tipo, index) => (
+                    <p
+                      key={index}
+                      onClick={() => navigate(`/Catalogos/${tipo}`)}
+                    >
+                      # {tipo || "Tipo Indefinido"}
+                    </p>
+                  )
+                )}
               </ul>
             </li>
           </ul>

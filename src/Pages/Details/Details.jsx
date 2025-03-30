@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
 import style from "./details.module.css";
 
 export default function Details() {
@@ -65,7 +64,6 @@ export default function Details() {
 
   return (
     <>
-      <Header />
       <div className={style.product_wrapper}>
         <div className={style.product_detail}>
           <div className={style.img_carousel}>

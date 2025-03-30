@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify-icon/react";
-import style from "./products.module.css";
+import style from "./lineProducts.module.css";
 
-export default function Products() {
+export default function LineProducts() {
   const [produtos, setProdutos] = useState([]);
   const [erro, setErro] = useState(null);
   const [carregando, setCarregando] = useState(true);

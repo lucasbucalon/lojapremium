@@ -1,11 +1,12 @@
 import { Icon } from "@iconify-icon/react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Banner from "../../components/Banner/Banner";
-import "./Loja.css";
+import { useNavigate, useParams } from "react-router-dom";
+import Profile from "../../components/Profile/Profile";
 
-export default function Loja() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+import style from "./storeCategory.module.css";
+
+export default function StoreCategory() {
+  const { category } = useParams(); // Obtém a categoria da URL
   const [produtos, setProdutos] = useState([]);
   const [produtosFiltrados, setProdutosFiltrados] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -22,11 +23,16 @@ export default function Loja() {
   useEffect(() => {
     const carregarProdutos = async () => {
       try {
-        const response = await fetch("/produtos.json");
+        const response = await fetch("/server/products.json");
         if (!response.ok) throw new Error("Erro ao carregar produtos");
         const data = await response.json();
+        // Filtrar produtos pela categoria da URL
+        const produtosFiltradosCategoria = data.filter((produto) =>
+          produto.category.includes(category)
+        );
+
+        setProdutosFiltrados(produtosFiltradosCategoria);
         setProdutos(data);
-        setProdutosFiltrados(data);
       } catch (error) {
         setErro(error.message);
       } finally {
@@ -35,10 +41,12 @@ export default function Loja() {
     };
 
     carregarProdutos();
-  }, []);
+  }, [category]);
 
   // APLICAR FILTRO DE BUSCA
   const aplicarFiltro = (busca) => {
+    if (!category) return;
+
     const produtosFiltrados = busca.trim()
       ? produtos.filter((produto) =>
           [
@@ -50,7 +58,12 @@ export default function Loja() {
         )
       : [...produtos];
 
-    setProdutosFiltrados(produtosFiltrados);
+    // Filtra os produtos para a categoria atual
+    const produtosDaCategoria = produtosFiltrados.filter((produto) =>
+      produto.category.includes(category)
+    );
+
+    setProdutosFiltrados(produtosDaCategoria);
     setPaginaAtual(1);
   };
 
@@ -62,7 +75,12 @@ export default function Loja() {
       (produto) => produto.price >= min && produto.price <= max
     );
 
-    setProdutosFiltrados(produtosFiltrados);
+    // Filtra os produtos para a categoria atual
+    const produtosDaCategoria = produtosFiltrados.filter((produto) =>
+      produto.category.includes(category)
+    );
+
+    setProdutosFiltrados(produtosDaCategoria);
     setPaginaAtual(1);
   };
 
@@ -89,7 +107,7 @@ export default function Loja() {
         filtrarPorPreco();
       } else {
         aplicarFiltro(busca);
-        setBusca("");
+        setBusca();
       }
     }
   };
@@ -106,7 +124,13 @@ export default function Loja() {
     } else {
       produtosFiltrados = [...produtos];
     }
-    setProdutosFiltrados(produtosFiltrados);
+
+    // Filtra os produtos para a categoria atual
+    const produtosDaCategoria = produtosFiltrados.filter((produto) =>
+      produto.category.includes(category)
+    );
+
+    setProdutosFiltrados(produtosDaCategoria);
     setPaginaAtual(1);
   };
 
@@ -115,39 +139,43 @@ export default function Loja() {
     const startIndex = (paginaAtual - 1) * produtosPorPagina;
     const endIndex = paginaAtual * produtosPorPagina;
     return produtosFiltrados.slice(startIndex, endIndex).map((produto) => (
-      <div className="item-box" key={produto.id}>
+      <div key={produto.id} className={`${style.product} ${style.active}`}>
         <div
-          className="item"
-          onClick={() => navigate(`/detalhes/${produto.id}`)}
+          className={style.item}
+          onClick={() => navigate(`/Detalhes/${produto.id}`)}
         >
-          <img src={produto.image[0]} alt={produto.name} />
-          <h2 className="name">{produto.name}</h2>
-          <div className="des-box">
+          <img src={produto.image?.[0]} alt={produto.name} />
+
+          <div className={style.des_box}>
             <p>{produto.description}</p>
           </div>
-          <div className="prices">
-            <span
-              className="price"
-              style={{
-                color: produto.oferta ? "#555" : "",
-                textDecoration: produto.oferta ? "line-through" : "",
-                fontSize: produto.oferta ? "1.6rem" : "",
-                width: produto.oferta ? "100%" : "",
-                marginTop: produto.oferta ? "0" : "",
-              }}
-            >
-              R$ {produto.price.toFixed(2)}
-            </span>
-            {produto.oferta && (
-              <span className="offer-price">
-                R$ {produto.discountPrice.toFixed(2)}
-              </span>
-            )}
-          </div>
-          <div className="colors">Cores: {produto.cor?.join(", ") || ""}</div>
-          <div className="type">Tipo: {produto.type?.join(", ") || ""}</div>
         </div>
-        <button onClick={() => alert("Adicionado ao carrinho")}>
+        <div
+          className={style.products_prices}
+          onClick={() => navigate(`/Detalhes/${produto.id}`)}
+        >
+          <span
+            className={produto.oferta ? style.old_price : style.original_prices}
+          >
+            R$ {produto.price.toFixed(2)}
+          </span>
+          {produto.oferta && produto.discountPrice && (
+            <span className={style.offer_price}>
+              R$ {produto.discountPrice.toFixed(2)}
+            </span>
+          )}
+        </div>
+
+        <div style={{ display: "none" }}>
+          <h2>{produto.name}</h2>
+          <div>{produto.cor}</div>
+          <div>{produto.type}</div>
+        </div>
+
+        <button
+          className={style.cart_button}
+          onClick={() => alert("Adicionado ao carrinho")}
+        >
           <Icon icon="solar:cart-plus-linear" width="24" height="24" />
         </button>
       </div>
@@ -164,7 +192,9 @@ export default function Loja() {
       paginas.push(
         <button
           key={i}
-          className={`pagina-btn ${i === paginaAtual ? "active" : ""}`}
+          className={` ${style.pagina_btn} ${
+            i === paginaAtual ? style.active : ""
+          }`}
           style={{ background: i === paginaAtual ? "#555" : "" }}
           onClick={() => setPaginaAtual(i)}
         >
@@ -182,34 +212,17 @@ export default function Loja() {
   if (erro) {
     return <p>Erro: {erro}</p>;
   }
-
   return (
     <>
-      <header id="inicio" className="loja">
-        {/* BARRA LATERAL DE COMPRA  */}
-        <div className="cart" style={{ right: isCartOpen ? "0" : "-400px" }}>
-          <button className="config">
-            <Icon className="icon-config" icon="ph:gear" />
-            <p>Configurações</p>
-          </button>
-          <h2>Seu Carrinho</h2>
-          <div className="listCart"></div>
-          <div className="btn">
-            <button className="close" onClick={() => setIsCartOpen(false)}>
-              FECHAR
-            </button>
-            <button>COMPRAR</button>
-          </div>
-        </div>
-
-        <div className="content-header">
+      <header id="inicio" className={style.header}>
+        <div className={style.header_content}>
           {/* LOGO DA LOJA */}
-          <div className="logo">
-            <img src="/public/image/logo.jpg" alt="logo" />
+          <div className={style.logo}>
+            <img src="/image/logo.jpg" alt="logo" />
           </div>
 
           {/* BARRA DE PESQUISA */}
-          <div className="search">
+          <div className={style.search}>
             <input
               type="text"
               placeholder="Buscar Produto..."
@@ -217,13 +230,13 @@ export default function Loja() {
               onChange={(e) => setBusca(e.target.value)}
               onKeyDown={handleKeyDown}
             />
-            <Icon className="icon-search" icon="tabler:search" />
+            <Icon className={style.icon_search} icon="tabler:search" />
           </div>
 
           {/* FILTRO DE PREÇO */}
-          <div className="filter">
+          <div className={style.filter}>
             <input
-              className="minPrice"
+              className={style.minPrice}
               type="text"
               placeholder="Preço Min..."
               value={minPrice}
@@ -231,7 +244,7 @@ export default function Loja() {
               onKeyDown={handleKeyDown}
             />
             <input
-              className="maxPrice"
+              className={style.maxPrice}
               type="text"
               placeholder="Preço Max..."
               value={maxPrice}
@@ -241,24 +254,25 @@ export default function Loja() {
             <button onClick={filtrarPorPreco}>Filtrar</button>
           </div>
 
-          {/* PERFIL E MENU */}
-          <div className="menu">
-            <div className="icon" onClick={() => setIsCartOpen(true)}>
-              <Icon className="profile" icon="iconamoon:profile-light" />
-            </div>
-          </div>
+          <Profile />
 
           {/* BARRA DE NAVEGAÇÃO */}
-          <nav>
+          <nav className={style.header_nav}>
             <ul>
+              <li>
+                <a href="/">Loja</a>
+              </li>
+              <li>
+                <a href="/Todos">Todos</a>
+              </li>
               <li>
                 <a href="#" onClick={() => filtrarProdutosPorTipo("ofertas")}>
                   Ofertas
                 </a>
               </li>
               <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("todos")}>
-                  Todos
+                <a href="#" onClick={() => filtrarProdutosPorTipo("unisexx")}>
+                  Unisexx
                 </a>
               </li>
               <li>
@@ -276,13 +290,9 @@ export default function Loja() {
                   Feminino
                 </a>
               </li>
+
               <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("unisex")}>
-                  Unisex
-                </a>
-              </li>
-              <li>
-                <a href="/sobre">Sobre Nós</a>
+                <a href="/Sobre">Sobre Nós</a>
               </li>
               <li>
                 <a href="#contato">Contato</a>
@@ -292,64 +302,10 @@ export default function Loja() {
         </div>
       </header>
 
-      <Banner />
-
-      <section className="listProduct">
+      <section className={style.listProduct}>
         {exibirProdutos()}
-        <div className="pagination">{exibirPaginas()}</div>
+        <div className={style.pagination}>{exibirPaginas()}</div>
       </section>
     </>
   );
-}
-
-
-.carousel {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 10px 0;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  transition: transform 0.5s ease-in-out;
-  justify-content: center;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.item-box_p {
-  transition: all 0.3s ease;
-  flex: 0 0 calc(25% + 10px); /* 4 itens no centro e parte dos lados visíveis */
-  scroll-snap-align: center;
-  transition: transform 0.3s ease;
-  border-radius: 10px;
-  padding: 10px;
-  background: #d4deea;
-  border: 1px solid #eca0a0;
-  text-align: center;
-  position: relative;
-}
-
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: 90vw;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 2;
 }

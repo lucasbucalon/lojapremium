@@ -39,9 +39,9 @@ export default function Profile() {
   // }
 
   return (
-    <div className={style.menu}>
-      <div className={style.icon} onClick={() => alert("Menu aberto")}>
-        <Icon className={style.profile} icon="iconamoon:profile-light" />
+    <div className={style.profile}>
+      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
+        <Icon className={style.icon} icon="iconamoon:profile-light" />
       </div>
     </div>
     // <section className={style.profile_wrapper}>

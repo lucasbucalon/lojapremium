@@ -1,7 +1,7 @@
 /* PERFIL E MENU */
 
-header .menu {
-  & .icon {
+header .profile {
+  & .profile_item {
     display: flex;
     display: inline-flex;
     background-color: #3b1a1a;
@@ -16,11 +16,11 @@ header .menu {
     text-align: center;
   }
 
-  & .icon:hover {
+  & .profile_item:hover {
     background-color: #d79494;
     transform: scale(1.03);
   }
-  & .profile {
+  & .icon {
     font-size: 3.5rem;
   }
 }

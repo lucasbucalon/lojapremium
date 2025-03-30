@@ -1,7 +1,6 @@
 import { Icon } from "@iconify-icon/react";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Profile from "../../components/Profile/Profile";
+import { useState, useEffect, useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import style from "./storeAll.module.css";
 
 export default function StoreAll() {
@@ -10,14 +9,18 @@ export default function StoreAll() {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [paginaAtual, setPaginaAtual] = useState(1);
-  const [busca, setBusca] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+
   const produtosPorPagina = 30;
-
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Carregar produtos
+  // Função para obter termo da URL
+  const getSearchQuery = useCallback(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get("search") || "";
+  }, [location.search]);
+
+  // Carregar produtos do JSON
   useEffect(() => {
     const carregarProdutos = async () => {
       try {
@@ -25,7 +28,7 @@ export default function StoreAll() {
         if (!response.ok) throw new Error("Erro ao carregar produtos");
         const data = await response.json();
         setProdutos(data);
-        setProdutosFiltrados(data);
+        setProdutosFiltrados(data); // Inicializa com todos os produtos
       } catch (error) {
         setErro(error.message);
       } finally {
@@ -36,78 +39,34 @@ export default function StoreAll() {
     carregarProdutos();
   }, []);
 
-  // APLICAR FILTRO DE BUSCA
-  const aplicarFiltro = (busca) => {
-    const produtosFiltrados = busca.trim()
-      ? produtos.filter((produto) =>
-          [
-            produto.name,
-            ...(produto.cor || []),
-            ...(produto.type || []),
-            produto.description,
-          ].some((campo) => campo.toLowerCase().includes(busca.toLowerCase()))
-        )
-      : [...produtos];
+  // Filtragem dos produtos quando a busca muda
+  useEffect(() => {
+    const termoBusca = getSearchQuery().toLowerCase();
+    console.log("Termo de busca:", termoBusca);
 
-    setProdutosFiltrados(produtosFiltrados);
-    setPaginaAtual(1);
-  };
-
-  // FILTRAR POR PREÇO
-  const filtrarPorPreco = () => {
-    const min = parseFloat(minPrice) || 0;
-    const max = parseFloat(maxPrice) || Infinity;
-    const produtosFiltrados = produtos.filter(
-      (produto) => produto.price >= min && produto.price <= max
-    );
-
-    setProdutosFiltrados(produtosFiltrados);
-    setPaginaAtual(1);
-  };
-
-  const handleMinPriceChange = (e) => {
-    const value = e.target.value;
-    if (/^\d*\.?\d*$/.test(value) || value === "") {
-      setMinPrice(value);
-    }
-  };
-
-  const handleMaxPriceChange = (e) => {
-    const value = e.target.value;
-    if (/^\d*\.?\d*$/.test(value) || value === "") {
-      setMaxPrice(value);
-    }
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      event.target.classList.contains("minPrice") ||
-        event.target.classList.contains("maxPrice");
-      {
-        filtrarPorPreco();
-        aplicarFiltro(busca);
-        setBusca("");
-      }
-    }
-  };
-
-  // FILTRAR POR TIPO
-  const filtrarProdutosPorTipo = (tipo) => {
-    let produtosFiltrados;
-    if (tipo === "ofertas") {
-      produtosFiltrados = produtos.filter((produto) => produto.oferta === true);
-    } else if (tipo !== "todos") {
-      produtosFiltrados = produtos.filter((produto) =>
-        produto.type.includes(tipo)
-      );
+    if (!termoBusca) {
+      setProdutosFiltrados(produtos); // Exibe todos os produtos quando a barra de pesquisa está vazia
     } else {
-      produtosFiltrados = [...produtos];
+      const filtrados = produtos.filter(
+        (produto) =>
+          produto.name?.toLowerCase().includes(termoBusca) ||
+          produto.description?.toLowerCase().includes(termoBusca) ||
+          (produto.category &&
+            produto.category.some((cat) =>
+              cat.toLowerCase().includes(termoBusca)
+            )) ||
+          (produto.type &&
+            produto.type.some((t) => t.toLowerCase().includes(termoBusca))) ||
+          (produto.cor &&
+            produto.cor.some((cor) => cor.toLowerCase().includes(termoBusca)))
+      );
+      console.log("Produtos filtrados:", filtrados);
+      setProdutosFiltrados(filtrados);
     }
-    setProdutosFiltrados(produtosFiltrados);
-    setPaginaAtual(1);
-  };
+    setPaginaAtual(1); // Resetar página para 1 após nova busca
+  }, [getSearchQuery, produtos]);
 
-  // EXIBIR PRODUTOS
+  // Exibir produtos paginados
   const exibirProdutos = () => {
     const startIndex = (paginaAtual - 1) * produtosPorPagina;
     const endIndex = paginaAtual * produtosPorPagina;
@@ -118,7 +77,6 @@ export default function StoreAll() {
           onClick={() => navigate(`/Detalhes/${produto.id}`)}
         >
           <img src={produto.image?.[0]} alt={produto.name} />
-
           <div className={style.des_box}>
             <p>{produto.description}</p>
           </div>
@@ -155,7 +113,7 @@ export default function StoreAll() {
     ));
   };
 
-  // EXIBIR PÁGINAS
+  // Exibir botões de paginação
   const exibirPaginas = () => {
     const totalPaginas = Math.ceil(
       produtosFiltrados.length / produtosPorPagina
@@ -185,96 +143,9 @@ export default function StoreAll() {
   if (erro) {
     return <p>Erro: {erro}</p>;
   }
+
   return (
     <>
-      <header id="inicio" className={style.header}>
-        <div className={style.header_content}>
-          {/* LOGO DA LOJA */}
-          <div className={style.logo}>
-            <img src="/image/logo.jpg" alt="logo" />
-          </div>
-
-          {/* BARRA DE PESQUISA */}
-          <div className={style.search}>
-            <input
-              type="text"
-              placeholder="Buscar Produto..."
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
-            <Icon className={style.icon_search} icon="tabler:search" />
-          </div>
-
-          {/* FILTRO DE PREÇO */}
-          <div className={style.filter}>
-            <input
-              className={style.minPrice}
-              type="text"
-              placeholder="Preço Min..."
-              value={minPrice}
-              onChange={handleMinPriceChange}
-              onKeyDown={handleKeyDown}
-            />
-            <input
-              className={style.maxPrice}
-              type="text"
-              placeholder="Preço Max..."
-              value={maxPrice}
-              onChange={handleMaxPriceChange}
-              onKeyDown={handleKeyDown}
-            />
-            <button onClick={filtrarPorPreco}>Filtrar</button>
-          </div>
-
-          <Profile />
-
-          {/* BARRA DE NAVEGAÇÃO */}
-          <nav className={style.header_nav}>
-            <ul>
-              <li>
-                <a href="/">Loja</a>
-              </li>
-              <li>
-                <a href="/Todos">Todos</a>
-              </li>
-              <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("ofertas")}>
-                  Ofertas
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("unisexx")}>
-                  Unisexx
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("roupas")}>
-                  Roupas
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("masculino")}>
-                  Masculino
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => filtrarProdutosPorTipo("feminino")}>
-                  Feminino
-                </a>
-              </li>
-
-              <li>
-                <a href="/Sobre">Sobre Nós</a>
-              </li>
-              <li>
-                <a href="#contato">Contato</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
       <section className={style.listProduct}>
         {exibirProdutos()}
         <div className={style.pagination}>{exibirPaginas()}</div>
