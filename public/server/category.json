@@ -1,55 +1,55 @@
 [
   {
     "id": 1,
-    "title": "Notebook",
+    "title": "Camisas",
     "image": "/imgCategorias/c1.jpg",
     "link": "/Categorias/Camisas"
   },
   {
     "id": 2,
-    "title": "Notebook",
+    "title": "Roupas",
     "image": "/imgCategorias/c2.jpg",
     "link": "/Categorias/Roupas"
   },
   {
     "id": 3,
-    "title": "Notebook",
+    "title": "Camisas",
     "image": "/imgCategorias/c3.jpg",
     "link": "/Categorias/Camisas"
   },
   {
     "id": 4,
-    "title": "Notebook",
+    "title": "Roupas",
     "image": "/imgCategorias/c4.jpg",
     "link": "/Categorias/Roupas"
   },
   {
     "id": 5,
-    "title": "Notebook",
+    "title": "Camisas",
     "image": "/imgCategorias/c5.jpg",
     "link": "/Categorias/Camisas"
   },
   {
     "id": 6,
-    "title": "Notebook",
+    "title": "Roupas",
     "image": "/imgCategorias/c6.jpg",
     "link": "/Categorias/Roupas"
   },
   {
     "id": 7,
-    "title": "Notebook",
+    "title": "Camisas",
     "image": "/imgCategorias/c7.jpg",
     "link": "/Categorias/Camisas"
   },
   {
     "id": 8,
-    "title": "Notebook",
+    "title": "Roupas",
     "image": "/imgCategorias/c8.jpg",
     "link": "/Categorias/Roupas"
   },
   {
     "id": 9,
-    "title": "Notebook",
+    "title": "Camisas",
     "image": "/imgCategorias/c9.jpg",
     "link": "/Categorias/Camisas"
   }
