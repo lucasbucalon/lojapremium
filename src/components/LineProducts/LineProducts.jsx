@@ -91,7 +91,7 @@ export default function LineProducts() {
                 <div
                   className={style.list}
                   style={{
-                    transform: `translateX(-${(92.01 / itemsToShow) * index}%)`,
+                    transform: `translateX(-${(93.25 / itemsToShow) * index}%)`,
                   }}
                 >
                   {produtosPorTipo[tipo].map((produto, i) => (
@@ -107,7 +107,12 @@ export default function LineProducts() {
                         className={style.item}
                         onClick={() => navigate(`/Detalhes/${produto.id}`)}
                       >
-                        <img src={produto.image?.[0]} alt={produto.name} />
+                        <img
+                          src={produto.image?.[0]}
+                          alt={produto.name}
+                          className={style.img_1}
+                        />
+                        <img src={produto.image?.[1]} alt={produto.name} />
 
                         <div className={style.des_box}>
                           <p>{produto.description}</p>
@@ -132,7 +137,7 @@ export default function LineProducts() {
                           </span>
                         )}
 
-                        <button className={style.compra}>oi</button>
+                        <button className={style.compra}>Comprar</button>
                       </div>
 
                       <div style={{ display: "none" }}>

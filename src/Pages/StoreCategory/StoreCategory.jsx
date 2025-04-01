@@ -48,7 +48,12 @@ export default function StoreCategory() {
           className={style.item}
           onClick={() => navigate(`/Detalhes/${produto.id}`)}
         >
-          <img src={produto.image?.[0]} alt={produto.name} />
+          <img
+            src={produto.image?.[0]}
+            alt={produto.name}
+            className={style.img_1}
+          />
+          <img src={produto.image?.[1]} alt={produto.name} />
 
           <div className={style.des_box}>
             <p>{produto.description}</p>
@@ -68,6 +73,7 @@ export default function StoreCategory() {
               R$ {produto.discountPrice.toFixed(2)}
             </span>
           )}
+          <button className={style.compra}>Comprar</button>
         </div>
 
         <div style={{ display: "none" }}>
@@ -80,7 +86,7 @@ export default function StoreCategory() {
           className={style.cart_button}
           onClick={() => alert("Adicionado ao carrinho")}
         >
-          <Icon icon="solar:cart-plus-linear" width="24" height="24" />
+          <Icon icon="line-md:heart" className={style.icon_cart} />
         </button>
       </div>
     ));
