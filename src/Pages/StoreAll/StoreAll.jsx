@@ -147,8 +147,14 @@ export default function StoreAll() {
   return (
     <>
       <section className={style.listProduct}>
-        {exibirProdutos()}
-        <div className={style.pagination}>{exibirPaginas()}</div>
+        {produtosFiltrados.length > 0 ? (
+          <>
+            {exibirProdutos()}
+            <div className={style.pagination}>{exibirPaginas()}</div>
+          </>
+        ) : (
+          <p className={style.noProductMessage}>Produto não encontrado ...</p>
+        )}
       </section>
     </>
   );

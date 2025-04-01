@@ -1,4 +1,5 @@
 .header {
+  display: flex;
   width: 100%;
   background-color: #fe9fbf;
   position: relative;
@@ -63,7 +64,7 @@
 /*  BARRA DE PESQUISA */
 
 .search {
-  width: 30%;
+  width: 35%;
   position: relative;
   display: flex;
   align-items: center;
@@ -190,18 +191,27 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
-  .categorias:hover .up,
-  .catalogos:hover .up {
+  .categorias:hover .up1,
+  .catalogos:hover .up2 {
     display: inline;
   }
 
-  .up {
+  .up1,
+  .up2 {
     display: none;
     width: 45px !important;
     height: 45px !important;
     position: absolute;
     z-index: 100;
-    margin: -10px 0 0 -30px;
+    margin-top: -11px;
     color: rgb(255, 223, 223);
+  }
+
+  .up1 {
+    margin-left: 27px;
+  }
+
+  .up2 {
+    margin-left: 18px;
   }
 }

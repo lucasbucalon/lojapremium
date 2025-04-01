@@ -40,14 +40,28 @@ export default function Profile() {
 
   return (
     <div className={style.profile}>
-      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
-        <Icon className={style.icon} icon="line-md:heart" />
+      <div className={style.profile_user} onClick={() => alert("Menu aberto")}>
+        <Icon className={style.icon_user} icon="iconamoon:profile-light" />
       </div>
-      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
-        <Icon className={style.icon} icon="solar:cart-large-2-linear" />
+
+      <div className={style.profile_text}>
+        <p>Olá, faça o seu login</p>
+        <p>ou cadastre-se</p>
       </div>
-      <div className={style.profile_item} onClick={() => alert("Menu aberto")}>
-        <Icon className={style.icon} icon="iconamoon:profile-light" />
+
+      <div className={style.profile_box}>
+        <div
+          className={style.profile_item}
+          onClick={() => alert("Menu aberto")}
+        >
+          <Icon className={style.icon} icon="line-md:heart" />
+        </div>
+        <div
+          className={style.profile_item}
+          onClick={() => alert("Menu aberto")}
+        >
+          <Icon className={style.icon} icon="solar:cart-large-2-linear" />
+        </div>
       </div>
     </div>
   );

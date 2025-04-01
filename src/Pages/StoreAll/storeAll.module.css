@@ -64,3 +64,14 @@ header .logo {
 .pagina_btn:hover {
   background-color: #eca0a0;
 }
+
+.noProductMessage {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 200%;
+  height: 50vh;
+  font-size: 2rem;
+  color: #000000;
+  z-index: 0;
+}

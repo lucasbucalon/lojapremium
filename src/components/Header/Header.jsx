@@ -94,7 +94,7 @@ export default function Header() {
                 Categorias{" "}
                 <Icon icon="icon-park-solid:down-one" className={style.icon} />
               </a>
-              <Icon icon="teenyicons:up-solid" className={style.up} />
+              <Icon icon="teenyicons:up-solid" className={style.up1} />
               <ul className={style.categorias_list}>
                 {[
                   ...new Set(produtos.flatMap((produto) => produto.category)),
@@ -119,7 +119,7 @@ export default function Header() {
                 icon="teenyicons:up-solid"
                 width="15"
                 height="15"
-                className={style.up}
+                className={style.up2}
               />
               <ul className={style.catalogos_list}>
                 {[...new Set(produtos.flatMap((produto) => produto.type))].map(

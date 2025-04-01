@@ -131,6 +131,8 @@ export default function LineProducts() {
                             R$ {produto.discountPrice.toFixed(2)}
                           </span>
                         )}
+
+                        <button className={style.compra}>oi</button>
                       </div>
 
                       <div style={{ display: "none" }}>
@@ -144,9 +146,8 @@ export default function LineProducts() {
                         onClick={() => alert("Adicionado ao carrinho")}
                       >
                         <Icon
-                          icon="solar:cart-plus-linear"
-                          width="24"
-                          height="24"
+                          icon="line-md:heart"
+                          className={style.icon_cart}
                         />
                       </button>
                     </div>

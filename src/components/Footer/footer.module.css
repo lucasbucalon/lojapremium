@@ -4,6 +4,7 @@
   background-color: #eca0a0;
   display: flex;
   justify-content: space-around;
+  position: relative;
 
   .footer_container {
     display: flex;
