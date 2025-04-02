@@ -10,6 +10,7 @@ export default function Details() {
 
   // Carregar os dados do produto
   useEffect(() => {
+    window.scrollTo(0, 0);
     const carregarproducts = async () => {
       try {
         const response = await fetch("/server/products.json");

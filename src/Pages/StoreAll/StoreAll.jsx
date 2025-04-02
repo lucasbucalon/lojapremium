@@ -77,11 +77,14 @@ export default function StoreAll() {
           onClick={() => navigate(`/Detalhes/${produto.id}`)}
         >
           <img
-            src={produto.image?.[0]}
+            src={produto.image?.[0] || "/assets/no-image.jpg"}
             alt={produto.name}
             className={style.img_1}
           />
-          <img src={produto.image?.[1]} alt={produto.name} />
+          <img
+            src={produto.image?.[1] || "/assets/no-image.jpg"}
+            alt={produto.name}
+          />
 
           <div className={style.des_box}>
             <p>{produto.description}</p>
