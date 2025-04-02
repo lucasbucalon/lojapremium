@@ -81,7 +81,9 @@ export default function LineProducts() {
             <div key={tipo} className={style.products_container}>
               <div
                 className={style.products_title}
-                onClick={() => navigate(`/Categorias/${tipo}`)}
+                onClick={() =>
+                  navigate(`/Todos?search=${encodeURIComponent(tipo)}`)
+                }
               >
                 <h2>{tipo}</h2>
                 <span></span>

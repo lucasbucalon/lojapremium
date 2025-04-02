@@ -101,7 +101,9 @@ export default function Header() {
                 ].map((categoria, index) => (
                   <p
                     key={index}
-                    onClick={() => navigate(`/Categorias/${categoria}`)}
+                    onClick={() =>
+                      navigate(`/Todos?search=${encodeURIComponent(categoria)}`)
+                    }
                   >
                     # {categoria || "Categoria Indefinida"}
                   </p>
@@ -126,7 +128,9 @@ export default function Header() {
                   (tipo, index) => (
                     <p
                       key={index}
-                      onClick={() => navigate(`/Catalogos/${tipo}`)}
+                      onClick={() =>
+                        navigate(`/Todos?search=${encodeURIComponent(tipo)}`)
+                      }
                     >
                       # {tipo || "Tipo Indefinido"}
                     </p>

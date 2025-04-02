@@ -109,7 +109,9 @@ export default function Category() {
                 visibleCategories.includes(index) ? style.center : ""
               }`}
               ref={(el) => (categoryRefs.current[index] = el)}
-              onClick={() => navigate(categorys.link)}
+              onClick={() =>
+                navigate(`/Todos?search=${encodeURIComponent(categorys.title)}`)
+              }
             >
               <div className={style.category_item}>
                 <img src={categorys.image} alt={categorys.title || "Produto"} />

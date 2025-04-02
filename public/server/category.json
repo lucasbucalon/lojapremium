@@ -2,55 +2,46 @@
   {
     "id": 1,
     "title": "Camisas",
-    "image": "/imgCategorias/c1.jpg",
-    "link": "/Categorias/Camisas"
+    "image": "/imgCategorias/c1.jpg"
   },
   {
     "id": 2,
     "title": "Roupas",
-    "image": "/imgCategorias/c2.jpg",
-    "link": "/Categorias/Roupas"
+    "image": "/imgCategorias/c2.jpg"
   },
   {
     "id": 3,
     "title": "Camisas",
-    "image": "/imgCategorias/c3.jpg",
-    "link": "/Categorias/Camisas"
+    "image": "/imgCategorias/c3.jpg"
   },
   {
     "id": 4,
     "title": "Roupas",
-    "image": "/imgCategorias/c4.jpg",
-    "link": "/Categorias/Roupas"
+    "image": "/imgCategorias/c4.jpg"
   },
   {
     "id": 5,
     "title": "Camisas",
-    "image": "/imgCategorias/c5.jpg",
-    "link": "/Categorias/Camisas"
+    "image": "/imgCategorias/c5.jpg"
   },
   {
     "id": 6,
     "title": "Roupas",
-    "image": "/imgCategorias/c6.jpg",
-    "link": "/Categorias/Roupas"
+    "image": "/imgCategorias/c6.jpg"
   },
   {
     "id": 7,
     "title": "Camisas",
-    "image": "/imgCategorias/c7.jpg",
-    "link": "/Categorias/Camisas"
+    "image": "/imgCategorias/c7.jpg"
   },
   {
     "id": 8,
     "title": "Roupas",
-    "image": "/imgCategorias/c8.jpg",
-    "link": "/Categorias/Roupas"
+    "image": "/imgCategorias/c8.jpg"
   },
   {
     "id": 9,
     "title": "Camisas",
-    "image": "/imgCategorias/c9.jpg",
-    "link": "/Categorias/Camisas"
+    "image": "/imgCategorias/c9.jpg"
   }
 ]
