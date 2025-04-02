@@ -188,7 +188,10 @@
   .categorias:hover .categorias_list,
   .catalogos:hover .catalogos_list {
     display: grid;
+    opacity: 1;
+    visibility: visible;
     grid-template-columns: repeat(6, 1fr);
+    animation: none;
   }
 
   .categorias:hover .up1,

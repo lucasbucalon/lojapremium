@@ -20,7 +20,8 @@ export default function Category() {
 
         if (!Array.isArray(data)) throw new Error("Formato inválido de dados");
 
-        setCategory(data);
+        // Clona os primeiros e últimos elementos para efeito de carrossel infinito
+        setCategory([...data, ...data.slice(0, 2)]);
       } catch (error) {
         setErro(error.message);
       } finally {
@@ -41,7 +42,7 @@ export default function Category() {
         })
         .filter((index) => index !== null); // Remove índices nulos
 
-      setVisibleCategories(updatedVisibleCategories); // Atualiza o estado com os índices visíveis
+      setVisibleCategories(updatedVisibleCategories);
     };
 
     const isElementInViewport = (el) => {
@@ -55,25 +56,19 @@ export default function Category() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Inicializa a verificação no primeiro render
-    handleScroll();
+    handleScroll(); // Inicializa a verificação no primeiro render
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [category]); // O useEffect depende do category para ser recalculado se o array mudar
+  }, [category]);
 
   const moveNext = () => {
-    if (category.length > 1) {
-      setCategory((prev) => [...prev.slice(1), prev[0]]);
-    }
+    setCategory((prev) => [...prev.slice(1), prev[0]]);
   };
 
   const movePrev = () => {
-    if (category.length > 1) {
-      setCategory((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
-    }
+    setCategory((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
   };
 
   if (carregando) {
@@ -101,26 +96,24 @@ export default function Category() {
             />
           </svg>
         </button>
-        {category.map((categorys, index) => {
-          return (
-            <div
-              key={categorys.id}
-              className={`${style.category_container} ${
-                visibleCategories.includes(index) ? style.center : ""
-              }`}
-              ref={(el) => (categoryRefs.current[index] = el)}
-              onClick={() =>
-                navigate(`/Todos?search=${encodeURIComponent(categorys.title)}`)
-              }
-            >
-              <div className={style.category_item}>
-                <img src={categorys.image} alt={categorys.title || "Produto"} />
-                <span></span>
-                <p>{categorys.title}</p>
-              </div>
+        {category.map((categorys, index) => (
+          <div
+            key={index}
+            className={`${style.category_container} ${
+              visibleCategories.includes(index) ? style.center : ""
+            }`}
+            ref={(el) => (categoryRefs.current[index] = el)}
+            onClick={() =>
+              navigate(`/Todos?search=${encodeURIComponent(categorys.title)}`)
+            }
+          >
+            <div className={style.category_item}>
+              <img src={categorys.image} alt={categorys.title || "Produto"} />
+              <span></span>
+              <p>{categorys.title}</p>
             </div>
-          );
-        })}
+          </div>
+        ))}
         <button className={`${style.button} ${style.next}`} onClick={moveNext}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
             <path

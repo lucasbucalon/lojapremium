@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify-icon/react";
 import PropTypes from "prop-types";
@@ -9,8 +9,10 @@ export default function LineProducts({ categorias }) {
   const [erro, setErro] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [indices, setIndices] = useState({});
+  const [visibilidade, setVisibilidade] = useState({});
   const navigate = useNavigate();
   const itemsToShow = 5;
+  const refs = useRef({});
 
   useEffect(() => {
     const carregarProdutos = async () => {
@@ -28,7 +30,32 @@ export default function LineProducts({ categorias }) {
     carregarProdutos();
   }, []);
 
-  // Organizar produtos por categoria
+  useEffect(() => {
+    const checkVisibility = () => {
+      const newVisibilidade = {};
+      Object.keys(refs.current).forEach((tipo) => {
+        newVisibilidade[tipo] = refs.current[tipo]
+          ? isElementInViewport(refs.current[tipo])
+          : false;
+      });
+      setVisibilidade(newVisibilidade);
+    };
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+    return () => window.removeEventListener("scroll", checkVisibility);
+  }, [produtos]);
+
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    const threshold = 0.5; // Pelo menos 50% do elemento deve estar visível
+    const elementWidth = rect.right - rect.left;
+    const visibleWidth =
+      Math.min(window.innerWidth, rect.right) - Math.max(0, rect.left);
+
+    return visibleWidth / elementWidth >= threshold;
+  };
+
   const produtosPorTipo = produtos.reduce((acc, produto) => {
     produto.category.forEach((tipo) => {
       if (!acc[tipo]) acc[tipo] = [];
@@ -64,7 +91,11 @@ export default function LineProducts({ categorias }) {
         const total = Math.min(produtosPorTipo[tipo].length, 15);
 
         return (
-          <div key={tipo} className={style.products_container}>
+          <div
+            key={tipo}
+            className={style.products_container}
+            ref={(el) => (refs.current[tipo] = el)}
+          >
             <div
               className={style.products_title}
               onClick={() =>
@@ -135,7 +166,7 @@ export default function LineProducts({ categorias }) {
               </div>
             </div>
             <div className={style.controls}>
-              {index > 0 && (
+              {index > 0 && visibilidade[tipo] && (
                 <button
                   className={`${style.btn} ${style.left}`}
                   onClick={() => movePrev(tipo)}
@@ -148,7 +179,7 @@ export default function LineProducts({ categorias }) {
                   </svg>
                 </button>
               )}
-              {index + itemsToShow < total && (
+              {index + itemsToShow < total && visibilidade[tipo] && (
                 <button
                   className={`${style.btn} ${style.right}`}
                   onClick={() => moveNext(tipo)}

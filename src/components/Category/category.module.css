@@ -37,14 +37,14 @@
   .category_container {
     text-align: center;
     flex: 0 0 calc(100% / 7);
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     cursor: pointer;
     opacity: 0.6;
     z-index: 45;
     display: flex;
     justify-content: center;
     width: 100%;
-    transform: scale(0.98);
+    transform: scale(0.9);
 
     .category_item {
       margin: 0 10px;
