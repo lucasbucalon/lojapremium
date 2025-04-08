@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Categoria",
     "image": "/imgBanners/banner1.jpg",
-    "link": "/Categorias/Camisas"
+    "link": "/Todos?search=Camisas"
   },
   {
     "id": 2,
@@ -45,6 +45,6 @@
     "id": 8,
     "title": "Notebook",
     "image": "/imgBanners/banner8.jpg",
-    "link": "/detalhes/38"
+    "link": "/Detalhes/38"
   }
 ]
