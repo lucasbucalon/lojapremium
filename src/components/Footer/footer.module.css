@@ -1,123 +1,70 @@
 .footer_wrapper {
-  padding: 40px 20px;
-  margin: 100px 0 -60px 0;
-  background-color: #eca0a0;
+  width: 100%;
+  padding: 30px;
+  background-color: #fe9fbf;
+  position: relative;
+}
+
+.footer_contact {
   display: flex;
   justify-content: space-around;
-  position: relative;
-
-  .footer_container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .footer_section {
-    width: 20%;
-    margin-bottom: 20px;
-  }
+  color: black;
 
   h2 {
-    color: black;
-  }
-
-  img {
-    background-image: cover;
-    width: 100%;
-    border-radius: 5px;
-  }
-
-  p {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    color: black;
-    cursor: pointer;
-  }
-
-  a {
-    margin: 8px 0;
-    color: black;
-    display: flex;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
+    font-size: 1.8rem;
   }
 
   ul {
-    list-style: none;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  ul li {
-    margin: 10px 0;
-  }
-
-  ul li a {
+  a {
+    text-decoration: none;
     color: black;
-    text-decoration: none;
+    margin: 10px 30px 0 0;
   }
 
-  ul li a:hover {
-    text-decoration: underline;
-  }
+  /* LOGO DA LOJA */
 
-  .social_icons {
-    display: flex;
-    justify-content: space-between;
+  .logo {
+    width: 17%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Impede que o brilho ultrapasse a imagem */
 
-    a {
-      text-decoration: none;
+    & img {
+      width: 100%;
+      border-radius: 5px;
     }
 
-    svg {
-      margin: 0 3px;
-      color: black;
-      width: 30px;
-      height: 30px;
-      transition: 0.3s;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 120%;
+      height: 95%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      transform: skewX(-25deg);
+      animation: brilho 10s infinite;
     }
+  }
 
-    svg:hover {
-      transform: scale(1.3);
-      color: blue;
+  @keyframes brilho {
+    0% {
+      left: -100%;
     }
-  }
-
-  .footer_bottom {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 1.4rem;
-    background-color: black;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .footer_bottom:hover {
-    background-color: rgb(12, 12, 12);
-    transform: scale(1.01);
-    text-decoration: underline;
-  }
-
-  .ck {
-    color: #05ee15;
-    margin: 0 0 0 5px;
-  }
-
-  .web {
-    margin: 0 5px 0 0;
-    color: white;
-  }
-
-  .ck,
-  .web {
-    font-size: 1.6rem;
-    font-weight: bold;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    5% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
   }
 }
