@@ -30,7 +30,12 @@ export default function Footer() {
 
       <section className={style.footer_links}></section>
 
-      <section className={style.footer_dev}></section>
+      <section className={style.footer_dev}>
+        <a href="/" className={style.dev}>
+          <h3>CKweb</h3>
+          <p>- 2025 Todos os direitos rezervados</p>
+        </a>
+      </section>
     </footer>
   );
 }

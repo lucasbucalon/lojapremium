@@ -1,8 +1,9 @@
 .footer_wrapper {
   width: 100%;
-  padding: 30px;
+  padding: 30px 0 0 0;
   background-color: #fe9fbf;
   position: relative;
+  margin-top: 80px;
 }
 
 .footer_contact {
@@ -23,6 +24,11 @@
     text-decoration: none;
     color: black;
     margin: 10px 30px 0 0;
+  }
+
+  a:hover {
+    color: #f54768;
+    text-decoration: underline;
   }
 
   /* LOGO DA LOJA */
@@ -66,5 +72,46 @@
     100% {
       left: 100%;
     }
+  }
+}
+
+.footer_dev {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #000;
+
+  .dev {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #000;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+  }
+
+  h3 {
+    margin: 0 8px 0 0;
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .dev:hover p {
+    color: #f54768;
+    text-decoration: underline;
+  }
+
+  .dev:hover h3 {
+    color: #f54768;
+    text-decoration: underline;
   }
 }

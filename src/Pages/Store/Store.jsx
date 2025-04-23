@@ -11,10 +11,10 @@ export default function Store() {
   return (
     <div className={style.store}>
       <Banner />
+      <Info />
       <Category />
       <LineProducts categorias={categoriasSelecionadas1} />
       <LineProducts categorias={categoriasSelecionadas2} />
-      <Info />
     </div>
   );
 }
