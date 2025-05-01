@@ -29,7 +29,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
-    "oferta": true
+    "oferta": true,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 2,
@@ -52,7 +59,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com design moderno.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
   },
   {
     "id": 3,
@@ -78,7 +92,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex de algodão com corte confortável.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 4,
@@ -101,7 +122,14 @@
     ],
     "discountPrice": 59.99,
     "description": "Camiseta masculina básica, ideal para o dia a dia.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 5,
@@ -124,7 +152,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com ajuste perfeito e conforto.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 6,
@@ -150,7 +185,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex confortável, disponível em várias cores.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 7,
@@ -173,7 +215,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina estilo clássico, para qualquer ocasião.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 8,
@@ -196,7 +245,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina elegante, para quem gosta de conforto e estilo.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 9,
@@ -222,7 +278,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex com estampa moderna, ideal para todos.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 10,
@@ -245,7 +308,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão, muito confortável.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 11,
@@ -268,7 +338,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina, perfeita para qualquer estação do ano.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 12,
@@ -294,7 +371,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex com diversas opções de cores.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 13,
@@ -317,7 +401,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina confortável, ideal para o verão.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 14,
@@ -340,7 +431,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com modelo moderno e estilo único.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 15,
@@ -366,7 +464,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex confortável e de alta qualidade.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 16,
@@ -389,7 +494,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 17,
@@ -412,7 +524,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com design moderno.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 18,
@@ -438,7 +557,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex de algodão com corte confortável.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 19,
@@ -461,7 +587,14 @@
     ],
     "discountPrice": 59.99,
     "description": "Camiseta masculina básica, ideal para o dia a dia.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 20,
@@ -484,7 +617,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com ajuste perfeito e conforto.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 21,
@@ -510,7 +650,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex confortável, disponível em várias cores.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 22,
@@ -533,7 +680,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina estilo clássico, para qualquer ocasião.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 23,
@@ -556,7 +710,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina elegante, para quem gosta de conforto e estilo.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 24,
@@ -582,7 +743,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex com estampa moderna, ideal para todos.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 25,
@@ -605,7 +773,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão, muito confortável.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 26,
@@ -628,7 +803,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina, perfeita para qualquer estação do ano.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 27,
@@ -654,7 +836,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex com diversas opções de cores.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 28,
@@ -677,7 +866,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina confortável, ideal para o verão.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 29,
@@ -700,7 +896,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta feminina com modelo moderno e estilo único.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 30,
@@ -726,7 +929,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex confortável e de alta qualidade.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 31,
@@ -752,7 +962,14 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex confortável e de alta qualidade.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 32,
@@ -778,7 +995,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 33,
@@ -805,7 +1029,14 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 34,
@@ -829,7 +1060,14 @@
     ],
     "discountPrice": 179.99,
     "description": "Jaqueta de couro sintético resistente e estilosa.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 35,
@@ -853,7 +1091,14 @@
     ],
     "discountPrice": 139.99,
     "description": "Tênis confortável para corrida e academia.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 36,
@@ -877,7 +1122,14 @@
     ],
     "discountPrice": 79.90,
     "description": "Mochila prática e resistente para o dia a dia.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 37,
@@ -901,7 +1153,14 @@
     ],
     "discountPrice": 49.90,
     "description": "Óculos de sol com proteção UV e design moderno.",
-    "oferta": false
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   },
   {
     "id": 38,
@@ -924,6 +1183,13 @@
     ],
     "discountPrice": 119.90,
     "description": "Calça jeans slim fit confortável e estilosa.",
-    "oferta": true
+    "oferta": false,
+    "amount": 1,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
   }
 ]

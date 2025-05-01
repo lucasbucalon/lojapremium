@@ -1,6 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import Filters from "../../components/Filters/Filters";
 import style from "./storeAll.module.css";
 
 export default function StoreAll() {
@@ -157,6 +158,7 @@ export default function StoreAll() {
 
   return (
     <>
+      <Filters />
       <section className={style.listProduct}>
         {produtosFiltrados.length > 0 ? (
           <>
