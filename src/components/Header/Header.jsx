@@ -5,6 +5,7 @@ import Profile from "../Profile/Profile";
 import style from "./header.module.css";
 
 export default function Header() {
+  const [categoriaAberta, setCategoriaAberta] = useState(null);
   const [produtos, setProdutos] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
@@ -40,6 +41,10 @@ export default function Header() {
         navigate(`/Todos`);
       }
     }
+  };
+
+  const toggleCategoria = (categoria) => {
+    setCategoriaAberta((prev) => (prev === categoria ? null : categoria));
   };
 
   if (carregando) return <p>Carregando...</p>;
@@ -89,13 +94,27 @@ export default function Header() {
             </li>
 
             {/* Categorias */}
-            <li className={style.categorias}>
+            <li
+              className={style.categorias}
+              onClick={() => toggleCategoria("cat1")}
+            >
               <a href="#">
                 Categorias{" "}
                 <Icon icon="icon-park-solid:down-one" className={style.icon} />
               </a>
-              <Icon icon="teenyicons:up-solid" className={style.up1} />
-              <ul className={style.categorias_list}>
+              <Icon
+                icon="teenyicons:up-solid"
+                className={style.up1}
+                style={{
+                  display: categoriaAberta === "cat1" ? "inline" : "none",
+                }}
+              />
+              <ul
+                className={style.categorias_list}
+                style={{
+                  display: categoriaAberta === "cat1" ? "grid" : "none",
+                }}
+              >
                 {[
                   ...new Set(produtos.flatMap((produto) => produto.category)),
                 ].map((categoria, index) => (
@@ -112,7 +131,10 @@ export default function Header() {
             </li>
 
             {/* Catálogo */}
-            <li className={style.catalogos}>
+            <li
+              className={style.catalogos}
+              onClick={() => toggleCategoria("cat2")}
+            >
               <a href="#">
                 Catálogo{" "}
                 <Icon icon="icon-park-solid:down-one" className={style.icon} />
@@ -122,8 +144,16 @@ export default function Header() {
                 width="15"
                 height="15"
                 className={style.up2}
+                style={{
+                  display: categoriaAberta === "cat2" ? "inline" : "none",
+                }}
               />
-              <ul className={style.catalogos_list}>
+              <ul
+                className={style.catalogos_list}
+                style={{
+                  display: categoriaAberta === "cat2" ? "grid" : "none",
+                }}
+              >
                 {[...new Set(produtos.flatMap((produto) => produto.type))].map(
                   (tipo, index) => (
                     <p

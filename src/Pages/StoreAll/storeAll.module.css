@@ -36,8 +36,8 @@ header .logo {
   flex-wrap: wrap;
   justify-content: center;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 60px 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 60px 30px;
   padding: 30px 3%;
   position: relative;
 }

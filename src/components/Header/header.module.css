@@ -185,18 +185,12 @@
     }
   }
 
-  .categorias:hover .categorias_list,
-  .catalogos:hover .catalogos_list {
-    display: grid;
+  .categorias_list,
+  .catalogos_list {
     opacity: 1;
     visibility: visible;
     grid-template-columns: repeat(6, 1fr);
     animation: none;
-  }
-
-  .categorias:hover .up1,
-  .catalogos:hover .up2 {
-    display: inline;
   }
 
   .up1,
