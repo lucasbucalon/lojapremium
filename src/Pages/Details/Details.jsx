@@ -96,6 +96,7 @@ export default function Details() {
             {products.description && (
               <p className={style.description}>{products.description}</p>
             )}
+            <div className={style.line}></div>
             <div className={style.price}>
               {products.oferta ? (
                 <>
