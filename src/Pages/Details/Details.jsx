@@ -7,6 +7,7 @@ export default function Details() {
   const [products, setProducts] = useState(null);
   const [erro, setErro] = useState(null);
   const [destaque, setDestaque] = useState(null); // Inicializa sem imagem
+  const [corSelecionada, setCorSelecionada] = useState("");
 
   // Carregar os dados do produto
   useEffect(() => {
@@ -97,35 +98,76 @@ export default function Details() {
               <p className={style.description}>{products.description}</p>
             )}
             <div className={style.line}></div>
-            <div className={style.price}>
-              {products.oferta ? (
-                <>
-                  <span className={style.original_price}>
-                    R$ {products.price}
-                  </span>
-                  <span className={style.offer_price}>
-                    R$ {products.discountPrice}
-                  </span>
-                </>
-              ) : (
-                <span>R$ {products.price}</span>
-              )}
-            </div>
-            {products.cor?.length > 0 && (
-              <div className={style.colors}>
-                Cores: {products.cor.join(", ")}
+            <div className={style.box_info}>
+              <div className={style.box}>
+                <div className={style.price}>
+                  {products.oferta ? (
+                    <>
+                      <span className={style.original_price}>
+                        R$ {products.price}
+                      </span>
+                      <span className={style.offer_price}>
+                        R$ {products.discountPrice}
+                      </span>
+                    </>
+                  ) : (
+                    <span>R$ {products.price}</span>
+                  )}
+                </div>
+                {products.cor?.length > 0 && (
+                  <div className={style.colors}>
+                    <p>Cor:</p>
+                    <div className={style.colorList}>
+                      {products.cor.map((cor, index) => (
+                        <div
+                          key={index}
+                          className={style.colorOption}
+                          onClick={() => setCorSelecionada(cor)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              setCorSelecionada(cor);
+                            }
+                          }}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <div
+                            className={`${style.colorBox} ${
+                              corSelecionada === cor ? style.selected : ""
+                            }`}
+                            style={{ backgroundColor: cor }}
+                          />
+                          <span className={style.colorName}>{cor}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {products.size?.length > 0 && (
+                  <div className={style.size}>
+                    Tamanho: {products.size.join(", ")}
+                  </div>
+                )}
+                {products.type?.length > 0 && (
+                  <div className={style.type}>
+                    Tipo: {products.type.join(", ")}
+                  </div>
+                )}
               </div>
-            )}
-            {products.type?.length > 0 && (
-              <div className={style.type}>Tipo: {products.type.join(", ")}</div>
-            )}
-            <div className={style.buttons}>
-              <button id="comprarAgora" onClick={handleComprarAgora}>
-                Comprar Agora
-              </button>
-              <button id="adicionarCarrinho" onClick={handleAdicionarCarrinho}>
-                Adicionar ao Carrinho
-              </button>
+              <div className={style.buttons}>
+                <h2>valor total</h2>
+                <h2>quantidade</h2>
+                <button id="comprarAgora" onClick={handleComprarAgora}>
+                  Comprar Agora
+                </button>
+                <button
+                  id="adicionarCarrinho"
+                  onClick={handleAdicionarCarrinho}
+                >
+                  Adicionar ao Carrinho
+                </button>
+              </div>
             </div>
           </div>
         </div>

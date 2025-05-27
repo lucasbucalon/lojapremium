@@ -6,19 +6,19 @@
   padding: 20px;
   width: 100%;
   display: flex;
-  background-color: rgb(194, 197, 225);
+  /* background-color: rgb(194, 197, 225); */
   border-radius: 10px;
 }
 
 .img_carousel {
-  width: 60%;
+  width: 50%;
   display: flex;
   border-radius: 10px;
   padding: 2px;
 
   .img_destaque {
     border-radius: 10px;
-    width: 82%;
+    width: 70%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
@@ -35,7 +35,7 @@
     overflow-y: auto;
     direction: rtl;
     scrollbar-width: thin;
-    scrollbar-color: #eca0a0 rgb(194, 197, 225);
+    scrollbar-color: #eca0a0 rgba(194, 197, 225, 0);
   }
 
   .img_res {
@@ -43,7 +43,7 @@
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease;
-    width: 100%;
+    width: 95%;
   }
 
   .img_res.active {
@@ -75,6 +75,15 @@
   color: #000;
 }
 
+.box_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 50%;
+}
+
 .price {
   font-size: 2.6rem;
   margin: 20px 0 20px 30px;
@@ -95,20 +104,57 @@
 }
 
 .colors {
+  margin: 20px 0 20px 30px;
+  color: #000;
+}
+
+.colorList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.colorOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.colorBox {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid #000;
+}
+
+.colorName {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.selected {
+  background-color: #000;
+}
+
+.size {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  color: #000;
 }
 
 .type {
-  text-align: center;
-  margin-top: 15px;
+  display: none;
 }
 
 .buttons {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
+  width: 50%;
 }
 
 button {
