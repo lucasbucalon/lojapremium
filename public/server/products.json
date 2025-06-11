@@ -283,7 +283,7 @@
     ],
     "discountPrice": 27.99,
     "description": "Camiseta unisex com estampa moderna, ideal para todos.",
-    "oferta": false,
+    "oferta": true,
     "amount": 1,
     "size": [
       "P",
@@ -685,7 +685,7 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina estilo clássico, para qualquer ocasião.",
-    "oferta": false,
+    "oferta": true,
     "amount": 1,
     "size": [
       "P",
@@ -1034,7 +1034,7 @@
     ],
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
-    "oferta": false,
+    "oferta": true,
     "amount": 1,
     "size": [
       "P",

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback, useRef } from "react";
 import style from "./details.module.css";
 import { Icon } from "@iconify-icon/react";
+import Recomended from "../../components/Recomended/Recomended.jsx";
 
 export default function Details() {
   const { id } = useParams(); // Captura o ID do produto da URL
@@ -283,6 +284,20 @@ export default function Details() {
           </div>
         </div>
       </div>
+
+      <Recomended
+        tipoFiltro={products?.category}
+        produtoIdAtual={products?.id}
+        filtroCampo="category"
+        titulo="Produtos da mesma categoria"
+      />
+
+      <Recomended
+        tipoFiltro={products?.type}
+        produtoIdAtual={products?.id}
+        filtroCampo="type"
+        titulo="Produtos do mesmo catálogo"
+      />
     </>
   );
 }

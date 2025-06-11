@@ -117,9 +117,9 @@ export default function StoreAll() {
 
         <button
           className={style.cart_button}
-          onClick={() => alert("Adicionado ao favoritos")}
+          onClick={() => alert("Adicionado ao Favoritos")}
         >
-          <Icon icon="line-md:heart" />
+          <Icon icon="line-md:heart" className={style.icon_cart} />
         </button>
       </div>
     ));
