@@ -1,13 +1,20 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import style from "./details.module.css";
+import { Icon } from "@iconify-icon/react";
 
 export default function Details() {
   const { id } = useParams(); // Captura o ID do produto da URL
   const [products, setProducts] = useState(null);
   const [erro, setErro] = useState(null);
   const [destaque, setDestaque] = useState(null); // Inicializa sem imagem
-  const [corSelecionada, setCorSelecionada] = useState("");
+  const [corSelecionada, setCorSelecionada] = useState(null);
+  const [sizeSelecionada, setSizeSelecionada] = useState(null);
+  const podeComprar = corSelecionada && sizeSelecionada;
+  const [quantidade, setQuantidade] = useState(1);
+  const [valorTotal, setValorTotal] = useState(0);
+  const [zoom, setZoom] = useState({ x: 0, y: 0, ativo: false });
+  const imgRef = useRef(null);
 
   // Carregar os dados do produto
   useEffect(() => {
@@ -56,6 +63,29 @@ export default function Details() {
     alert("Produto adicionado ao carrinho!");
   };
 
+  const calcularValorTotal = useCallback(() => {
+    if (!products) return;
+    const preco = products.oferta ? products.discountPrice : products.price;
+    const total = preco * quantidade;
+    setValorTotal(total);
+  }, [products, quantidade]);
+
+  useEffect(() => {
+    calcularValorTotal();
+  }, [quantidade, products, calcularValorTotal]);
+
+  const handleMouseMove = (e) => {
+    const bounds = imgRef.current.getBoundingClientRect();
+    const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+
+    setZoom({ x, y, ativo: true });
+  };
+
+  const handleMouseLeave = () => {
+    setZoom((prev) => ({ ...prev, ativo: false }));
+  };
+
   if (erro) {
     return <h2>{erro}</h2>;
   }
@@ -84,13 +114,28 @@ export default function Details() {
             </div>
             {destaque && (
               <img
+                ref={imgRef}
                 className={style.img_destaque}
                 src={destaque}
                 alt={products.name}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               />
             )}
           </div>
           <div className={style.product_info}>
+            {zoom.ativo && (
+              <div className={style.zoomArea}>
+                <div
+                  className={style.zoomedImage}
+                  style={{
+                    backgroundImage: `url(${destaque})`,
+                    backgroundPosition: `${zoom.x}% ${zoom.y}%`,
+                    backgroundSize: "250%",
+                  }}
+                />
+              </div>
+            )}
             <h2 id="productsNome" className={style.name}>
               {products.name}
             </h2>
@@ -100,6 +145,7 @@ export default function Details() {
             <div className={style.line}></div>
             <div className={style.box_info}>
               <div className={style.box}>
+                <Icon icon="line-md:heart" className={style.icon_favorite} />
                 <div className={style.price}>
                   {products.oferta ? (
                     <>
@@ -145,28 +191,93 @@ export default function Details() {
                 )}
 
                 {products.size?.length > 0 && (
-                  <div className={style.size}>
-                    Tamanho: {products.size.join(", ")}
+                  <div className={style.colors}>
+                    <p>Tamanho:</p>
+                    <div className={style.colorList}>
+                      {products.size.map((size, index) => (
+                        <div
+                          key={index}
+                          className={style.colorOption}
+                          onClick={() => setSizeSelecionada(size)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              setSizeSelecionada(size);
+                            }
+                          }}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <div
+                            className={`${style.colorBox} ${
+                              sizeSelecionada === size ? style.selected : ""
+                            }`}
+                            style={{ backgroundColor: size }}
+                          />
+                          <span className={style.colorName}>{size}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
+
                 {products.type?.length > 0 && (
                   <div className={style.type}>
                     Tipo: {products.type.join(", ")}
                   </div>
                 )}
               </div>
-              <div className={style.buttons}>
-                <h2>valor total</h2>
-                <h2>quantidade</h2>
-                <button id="comprarAgora" onClick={handleComprarAgora}>
-                  Comprar Agora
-                </button>
-                <button
-                  id="adicionarCarrinho"
-                  onClick={handleAdicionarCarrinho}
-                >
-                  Adicionar ao Carrinho
-                </button>
+
+              <div className={style.finalizarCompra}>
+                <div className={style.valorTotal}>
+                  <h4>Valor Total</h4>
+                  <p id="valorTotal">R$ {valorTotal.toFixed(2)}</p>
+                </div>
+
+                <div className={style.quantidade}>
+                  <h4>Quantidade</h4>
+                  <input
+                    type="number"
+                    value={quantidade}
+                    min={1}
+                    max={products.amount}
+                    onChange={(e) => {
+                      const valor = Number(e.target.value);
+                      if (valor > products.amount) {
+                        setQuantidade(products.amount);
+                      } else {
+                        setQuantidade(valor);
+                      }
+                    }}
+                  />
+                  <p className={style.dica}>
+                    Máximo disponível: {products.amount}
+                  </p>
+                </div>
+
+                <div className={style.box_buttons}>
+                  <button
+                    className={style.comprarAgora}
+                    onClick={handleComprarAgora}
+                    disabled={!podeComprar}
+                    title={!podeComprar ? "Selecione cor e tamanho" : ""}
+                  >
+                    Comprar Agora
+                  </button>
+                  <button
+                    className={style.adicionarCarrinho}
+                    onClick={handleAdicionarCarrinho}
+                    disabled={!podeComprar}
+                    title={!podeComprar ? "Selecione cor e tamanho" : ""}
+                  >
+                    Adicionar ao Carrinho
+                  </button>
+                  {!podeComprar && (
+                    <p className={style.alerta}>
+                      Selecione a <strong>cor</strong> e o{" "}
+                      <strong>tamanho</strong> para continuar.
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>

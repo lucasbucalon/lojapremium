@@ -4,7 +4,11 @@
     "name": "Camiseta Masculina",
     "cor": [
       "branco",
-      "preto"
+      "rosa",
+      "preto",
+      "cinza",
+      "verde",
+      "laranja"
     ],
     "price": 30.99,
     "image": [
@@ -30,7 +34,7 @@
     "discountPrice": 25.99,
     "description": "Camiseta masculina de algodão com estampa moderna.",
     "oferta": true,
-    "amount": 1,
+    "amount": 10,
     "size": [
       "P",
       "M",
@@ -43,7 +47,8 @@
     "name": "Camiseta Feminina",
     "cor": [
       "branco",
-      "azul"
+      "azul",
+      "rosa"
     ],
     "price": 35.99,
     "image": [
