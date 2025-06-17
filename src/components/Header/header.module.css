@@ -8,6 +8,84 @@
     margin: 0;
     border-radius: 0;
   }
+
+  /* PERFIL E MENU */
+
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile_user {
+    background-color: #ff6a6a;
+    margin: 0 10px;
+    display: flex;
+    display: inline-flex;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile_text {
+    margin: 0 15px 0 0;
+    & p {
+      width: 100%;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .profile_text:hover p {
+    color: #ff5858;
+    transition: 0.3s;
+  }
+
+  & .profile_user:hover {
+    background-color: #ff5858;
+    transform: scale(1.03);
+  }
+
+  .icon_user {
+    font-size: 3.5rem;
+    width: 3.5rem;
+    height: 3.3rem;
+  }
+
+  .profile_box {
+    background-color: #ff6a6a;
+    border-radius: 20px;
+    padding: 2px;
+    & .profile_item {
+      margin: 0 10px;
+      display: flex;
+      display: inline-flex;
+      width: 55px;
+      height: 55px;
+      border-radius: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    & .profile_item:hover {
+      background-color: #ff5858;
+      transform: scale(1.03);
+    }
+    & .icon {
+      font-size: 3.5rem;
+      width: 3.5rem;
+      height: 3.3rem;
+    }
+  }
 }
 
 .header_content {
@@ -85,42 +163,6 @@
     left: 10px;
     width: 2rem;
     height: 2rem;
-  }
-}
-
-/*  FILTRO DE PREÇO */
-
-.filter {
-  width: 25%;
-  display: flex;
-
-  & .minPrice,
-  & .maxPrice {
-    font-size: 1.4rem;
-    background-color: white;
-    padding: 9px 0;
-    border: 0.5px solid #ff4e89;
-    width: 100%;
-    color: #000;
-    text-align: center;
-  }
-
-  & .minPrice {
-    border-radius: 5px 0 0 5px;
-  }
-
-  & button {
-    padding: 2px;
-    width: 100%;
-    background-color: #ff4e89;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 1.5rem;
-  }
-
-  & button:hover {
-    background-color: #ff3c7d;
   }
 }
 

@@ -9,7 +9,6 @@ import Store from "./Pages/Store/Store";
 import About from "./Pages/About/About";
 import Offer from "./Pages/Offer/Offer";
 import Details from "./Pages/Details/Details";
-import Profile from "./components/Profile/Profile";
 import StoreAll from "./Pages/StoreAll/StoreAll";
 
 const router = createBrowserRouter([
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
       {
         path: "/Ofertas",
         element: <Offer />,
-      },
-      {
-        path: "/Perfil/:name",
-        element: <Profile />,
       },
     ],
   },

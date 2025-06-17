@@ -1,7 +1,6 @@
 import { Icon } from "@iconify-icon/react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Profile from "../Profile/Profile";
 import style from "./header.module.css";
 
 export default function Header() {
@@ -70,7 +69,32 @@ export default function Header() {
           <Icon className={style.icon_search} icon="tabler:search" />
         </div>
 
-        <Profile />
+        {/* PERFIL DO USUÁRIO */}      
+       <div className={style.profile}>
+             <div className={style.profile_user} onClick={() => alert("Menu aberto")}>
+               <Icon className={style.icon_user} icon="iconamoon:profile-light" />
+             </div>
+       
+             <div className={style.profile_text}>
+               <p>Olá, faça o seu login</p>
+               <p>ou cadastre-se</p>
+             </div>
+       
+             <div className={style.profile_box}>
+               <div
+                 className={style.profile_item}
+                 onClick={() => alert("Menu aberto")}
+               >
+                 <Icon className={style.icon} icon="line-md:heart" />
+               </div>
+               <div
+                 className={style.profile_item}
+                 onClick={() => alert("Menu aberto")}
+               >
+                 <Icon className={style.icon} icon="solar:cart-large-2-linear" />
+               </div>
+             </div>
+           </div>
 
         {/* BARRA DE NAVEGAÇÃO */}
         <nav className={style.header_nav}>
