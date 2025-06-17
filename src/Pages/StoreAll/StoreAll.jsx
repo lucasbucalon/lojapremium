@@ -10,6 +10,7 @@ export default function StoreAll() {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [paginaAtual, setPaginaAtual] = useState(1);
+  const [mostrarOfertas, setMostrarOfertas] = useState(false);
 
   const produtosPorPagina = 30;
   const navigate = useNavigate();
@@ -45,10 +46,11 @@ export default function StoreAll() {
     const termoBusca = getSearchQuery().toLowerCase();
     console.log("Termo de busca:", termoBusca);
 
-    if (!termoBusca) {
-      setProdutosFiltrados(produtos); // Exibe todos os produtos quando a barra de pesquisa está vazia
-    } else {
-      const filtrados = produtos.filter(
+    let filtrados = produtos;
+
+    // Aplica busca textual se houver termo
+    if (termoBusca) {
+      filtrados = filtrados.filter(
         (produto) =>
           produto.name?.toLowerCase().includes(termoBusca) ||
           produto.description?.toLowerCase().includes(termoBusca) ||
@@ -61,11 +63,16 @@ export default function StoreAll() {
           (produto.cor &&
             produto.cor.some((cor) => cor.toLowerCase().includes(termoBusca)))
       );
-      console.log("Produtos filtrados:", filtrados);
-      setProdutosFiltrados(filtrados);
     }
-    setPaginaAtual(1); // Resetar página para 1 após nova busca
-  }, [getSearchQuery, produtos]);
+
+    // Aplica filtro de oferta se estiver ativado
+    if (mostrarOfertas) {
+      filtrados = filtrados.filter((produto) => produto.oferta === true);
+    }
+
+    setProdutosFiltrados(filtrados);
+    setPaginaAtual(1); // Resetar para página 1 após filtro
+  }, [getSearchQuery, produtos, mostrarOfertas]);
 
   // Exibir produtos paginados
   const exibirProdutos = () => {
@@ -158,7 +165,10 @@ export default function StoreAll() {
 
   return (
     <>
-      <Filters />
+      <Filters
+        mostrarOfertas={mostrarOfertas}
+        setMostrarOfertas={setMostrarOfertas}
+      />
       <section className={style.listProduct}>
         {produtosFiltrados.length > 0 ? (
           <>

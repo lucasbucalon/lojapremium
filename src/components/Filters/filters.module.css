@@ -1,0 +1,19 @@
+.filter_box {
+  padding: 1rem;
+  /* display: none; */
+}
+
+/* Mostra o conteúdo quando o checkbox "filter" estiver marcado */
+#filter:checked ~ .filter_box {
+  display: block;
+}
+
+/* Estilo básico para o checkbox */
+.checkbox_container {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
