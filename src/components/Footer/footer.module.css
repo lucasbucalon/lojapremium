@@ -1,9 +1,8 @@
 .footer_wrapper {
   width: 100%;
-  padding: 30px 0 0 0;
+  padding: 80px 0 0 0;
   background-color: #fe9fbf;
   position: relative;
-  margin-top: 80px;
 }
 
 .footer_contact {
@@ -80,7 +79,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 80px;
   font-size: 1.5rem;
   color: #000;
 
