@@ -58,7 +58,8 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+      /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); */
     }
 
     .category_item:hover img {
