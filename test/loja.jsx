@@ -1,4 +1,5 @@
 import { Icon } from "@iconify-icon/react";
+
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Profile from "../../components/Profile/Profile";
