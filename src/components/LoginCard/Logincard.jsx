@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import style from "./loginCard.module.css";
+import style from "./logincard.module.css";
 import PropTypes from "prop-types";
 
 const users = [
